@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: daily | WindTale]]></title>
-  <link href="http://arkist.github.io/blog/categories/daily/atom.xml" rel="self"/>
-  <link href="http://arkist.github.io/"/>
-  <updated>2013-07-11T15:42:59+09:00</updated>
-  <id>http://arkist.github.io/</id>
+  <link href="http://windtale.net/blog/categories/daily/atom.xml" rel="self"/>
+  <link href="http://windtale.net/"/>
+  <updated>2013-07-11T15:51:37+09:00</updated>
+  <id>http://windtale.net/</id>
   <author>
     <name><![CDATA[진우]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[2013년 시작]]></title>
-    <link href="http://arkist.github.io/blog/new-year-2013/"/>
+    <link href="http://windtale.net/blog/new-year-2013/"/>
     <updated>2013-01-03T12:30:00+09:00</updated>
-    <id>http://arkist.github.io/blog/new-year-2013</id>
+    <id>http://windtale.net/blog/new-year-2013</id>
     <content type="html"><![CDATA[<p>빠르다. 벌써 2013년이다.<br/>
 뭔가 열심히 꾸려보자 블로그를 열었지만 이게 겨우 세번째. 게다가 꼴랑 세개 있는 글 중 &lsquo;시작'이 들어가는 제목이 두개. lol</p>
 
@@ -73,9 +73,9 @@
   
   <entry>
     <title type="html"><![CDATA[블로그 새로 시작 (또!)]]></title>
-    <link href="http://arkist.github.io/blog/start-new-blog/"/>
+    <link href="http://windtale.net/blog/start-new-blog/"/>
     <updated>2012-09-24T21:35:00+09:00</updated>
-    <id>http://arkist.github.io/blog/start-new-blog</id>
+    <id>http://windtale.net/blog/start-new-blog</id>
     <content type="html"><![CDATA[<p>블로그를 다시 시작하기로 했다.
 여기는 기술관련된 내용 위주로 포스팅을 할 예정이다.</p>
 

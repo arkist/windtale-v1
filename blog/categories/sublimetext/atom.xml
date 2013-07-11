@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: sublimetext | WindTale]]></title>
-  <link href="http://arkist.github.io/blog/categories/sublimetext/atom.xml" rel="self"/>
-  <link href="http://arkist.github.io/"/>
-  <updated>2013-07-11T15:42:59+09:00</updated>
-  <id>http://arkist.github.io/</id>
+  <link href="http://windtale.net/blog/categories/sublimetext/atom.xml" rel="self"/>
+  <link href="http://windtale.net/"/>
+  <updated>2013-07-11T15:51:37+09:00</updated>
+  <id>http://windtale.net/</id>
   <author>
     <name><![CDATA[진우]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Sublime Text 2 유용한 기능과 단축키 정리]]></title>
-    <link href="http://arkist.github.io/blog/sublime-text-tip/"/>
+    <link href="http://windtale.net/blog/sublime-text-tip/"/>
     <updated>2012-09-24T21:57:00+09:00</updated>
-    <id>http://arkist.github.io/blog/sublime-text-tip</id>
+    <id>http://windtale.net/blog/sublime-text-tip</id>
     <content type="html"><![CDATA[<h2>소개</h2>
 
 <p><a href="http://sublimetext.com">Sublime Text2</a>를 쓰는 사람이 많이 늘었다. 맥/윈도우/리눅스를 지원하는 강력한 에디터이다. 심플함과 막강한 기능이 매력이다.</p>

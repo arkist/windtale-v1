@@ -1,49 +1,47 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://arkist.github.io/blog/start-new-blog/</loc>
+        <loc>http://windtale.net/blog/start-new-blog/</loc>
         <lastmod>2013-07-08T15:57:51+09:00</lastmod>
     </url>
     <url>
-        <loc>http://arkist.github.io/blog/sublime-text-tip/</loc>
+        <loc>http://windtale.net/blog/sublime-text-tip/</loc>
         <lastmod>2013-07-11T15:42:41+09:00</lastmod>
     </url>
     <url>
-        <loc>http://arkist.github.io/blog/new-year-2013/</loc>
+        <loc>http://windtale.net/blog/new-year-2013/</loc>
         <lastmod>2013-07-08T15:57:51+09:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://arkist.github.io/blog/using-custom-domain-with-octopress-in-github-pages/
-        </loc>
+        <loc>http://windtale.net/blog/using-custom-domain-with-octopress-in-github-pages/</loc>
         <lastmod>2013-07-11T14:53:47+09:00</lastmod>
     </url>
     <url>
-        <loc>http://arkist.github.io/blog/octopress-disqus-count-problem/</loc>
+        <loc>http://windtale.net/blog/octopress-disqus-count-problem/</loc>
         <lastmod>2013-07-08T15:57:51+09:00</lastmod>
     </url>
     <url>
-        <loc>http://arkist.github.io/about/</loc>
+        <loc>http://windtale.net/about/</loc>
         <lastmod>2013-07-08T15:57:51+09:00</lastmod>
     </url>
     <url>
-        <loc>http://arkist.github.io/archives/</loc>
+        <loc>http://windtale.net/archives/</loc>
         <lastmod>2013-07-11T15:42:41+09:00</lastmod>
     </url>
     <url>
-        <loc>http://arkist.github.io/blog/archives/</loc>
+        <loc>http://windtale.net/blog/archives/</loc>
         <lastmod>2013-07-11T15:42:41+09:00</lastmod>
     </url>
     <url>
-        <loc>http://arkist.github.io/blog/</loc>
+        <loc>http://windtale.net/blog/</loc>
         <lastmod>2013-07-11T15:42:41+09:00</lastmod>
     </url>
     <url>
-        <loc>http://arkist.github.io/</loc>
+        <loc>http://windtale.net/</loc>
         <lastmod>2013-07-11T15:42:41+09:00</lastmod>
     </url>
     <url>
-        <loc>http://arkist.github.io/robots.txt</loc>
+        <loc>http://windtale.net/robots.txt</loc>
         <lastmod>2013-07-08T12:16:27+09:00</lastmod>
     </url>
 </urlset>
