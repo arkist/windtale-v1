@@ -9,7 +9,7 @@
 	
 	<meta name="description" content="근래 2~3일간 블로그 접속이 잘 안되었을 것이다.
 옥토프레스를 좀 건드려보다가 도메인 셋팅파일이 자꾸 날아가는 바람에 그렇게 되었다.
-나와 같은 환경에서 커스텀 도메인을 사용시 문제점과 필요한 셋팅에 대해 남겨본다. Github Pages에 커스텀 도메인을 연결하는 &hellip;">
+나와 같은 환경에서 커스텀 도메인을 사용시 문제점과 필요한 셋팅에 대해 남겨본다. [2013-07-11] 이 문제는 정식으로 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -77,12 +77,18 @@
 	
 	<div id="content" class="inner"><article class="post">
 	<h1 class="title">Github Pages+Octopress에서 커스텀 도메인 사용시 주의사항</h1>
-	<div class="entry-content"><p>근래 2~3일간 블로그 접속이 잘 안되었을 것이다.<br/>
-옥토프레스를 좀 건드려보다가 도메인 셋팅파일이 자꾸 날아가는 바람에 그렇게 되었다.<br/>
+	<div class="entry-content"><p>근래 2~3일간 블로그 접속이 잘 안되었을 것이다.
+옥토프레스를 좀 건드려보다가 도메인 셋팅파일이 자꾸 날아가는 바람에 그렇게 되었다.
 나와 같은 환경에서 커스텀 도메인을 사용시 문제점과 필요한 셋팅에 대해 남겨본다.</p>
 
 <!--more-->
 
+
+<hr />
+
+<p><strong>[2013-07-11]</strong> 이 문제는 정식으로 보고되어 해결된 것으로 보인다. <a href="http://octopress.org/docs/deploying/github/">정식사이트의 Github Pages를 통한 배포</a>에서 <strong>Custom Domains</strong>부분을 참고하자.</p>
+
+<hr />
 
 <blockquote><p><em>Github Pages에 커스텀 도메인을 연결하는 법은 이 포스트에서 다루지 않는다. 관련해서는 <a href="http://dogfeet.github.com/articles/2012/github-pages.html">GitHub의 페이지 기능 이용하기 &ndash; dogfeet</a>를 참고하자.</em></p></blockquote>
 
@@ -120,7 +126,7 @@
 </span><span class='line'>  <span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">exists?</span><span class="p">(</span><span class="s2">&quot;.preview-mode&quot;</span><span class="p">)</span>
 </span><span class='line'>    <span class="nb">puts</span> <span class="s2">&quot;## Found posts in preview mode, regenerating files ...&quot;</span>
 </span><span class='line'>    <span class="no">File</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">&quot;.preview-mode&quot;</span><span class="p">)</span>
-</span><span class='line'>    <span class="no">Rake</span><span class="o">::</span><span class="no">Task</span><span class="o">[</span><span class="ss">:generate</span><span class="o">].</span><span class="n">execute</span>
+</span><span class='line'>    <span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">[</span><span class="ss">:generate</span><span class="o">].</span><span class="n">execute</span>
 </span><span class='line'>  <span class="k">end</span>
 </span><span class='line'>
 </span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;## Generating CNAME, README&quot;</span>
@@ -128,17 +134,15 @@
 </span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;echo Windtale.net Blog! &gt; </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/README&quot;</span>
 </span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;## Done!&quot;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="no">Rake</span><span class="o">::</span><span class="no">Task</span><span class="o">[</span><span class="ss">:copydot</span><span class="o">].</span><span class="n">invoke</span><span class="p">(</span><span class="n">source_dir</span><span class="p">,</span> <span class="n">public_dir</span><span class="p">)</span>
-</span><span class='line'>  <span class="no">Rake</span><span class="o">::</span><span class="no">Task</span><span class="o">[</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">deploy_default</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">].</span><span class="n">execute</span>
+</span><span class='line'>  <span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">[</span><span class="ss">:copydot</span><span class="o">].</span><span class="n">invoke</span><span class="p">(</span><span class="n">source_dir</span><span class="p">,</span> <span class="n">public_dir</span><span class="p">)</span>
+</span><span class='line'>  <span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">[</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">deploy_default</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">].</span><span class="n">execute</span>
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p></p>
-
-<p>위 소스상에서 9-12번째 라인이 추가한 부분다.<br/>
-deploy 명령을 실행하면 <code>deploy</code>를 구성하기전에 먼저 <code>public</code> 디렉토리에 <code>CNAME</code> 파일을 생성해 준다.<br/>
-그동안 파일생성 시점을 착각하고 generate쪽에 추가해뒀더니, preview시에 CNAME 파일이 삭제되는데도 모르고 지나쳤었다.<br/>
+<p>위 소스상에서 9-12번째 라인이 추가한 부분다.
+deploy 명령을 실행하면 <code>deploy</code>를 구성하기전에 먼저 <code>public</code> 디렉토리에 <code>CNAME</code> 파일을 생성해 준다.
+그동안 파일생성 시점을 착각하고 generate쪽에 추가해뒀더니, preview시에 CNAME 파일이 삭제되는데도 모르고 지나쳤었다.
 <del>요번에 블로그 접속이 안되던게 그것 때문이었다-_&ndash;)</del></p>
 </div>
 
