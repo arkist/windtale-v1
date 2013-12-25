@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[WindTale]]></title>
+  <link href="http://windtale.net/atom.xml" rel="self"/>
+  <link href="http://windtale.net/"/>
+  <updated>2013-12-26T00:53:20+09:00</updated>
+  <id>http://windtale.net/</id>
+  <author>
+    <name><![CDATA[진우]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress - 글목록에서 Disqus 댓글 카운트가 항상 '0'일 때]]></title>
+    <link href="http://windtale.net/blog/octopress-disqus-count-problem/"/>
+    <updated>2013-01-29T15:36:00+09:00</updated>
+    <id>http://windtale.net/blog/octopress-disqus-count-problem</id>
+    <content type="html"><![CDATA[<p>요며칠 옥토프레스 자잘한 문제들을 수정하고 있다.<br/>
+이번엔 blog, archives 메뉴에서 댓글이 &lsquo;0&#8217;으로 나오는 문제를 해결.</p>
+
+<!--more-->
+
+
+<h2>Disqus</h2>
+
+<p>옥토프레스는 정적페이지 기반이기 때문에, 댓글은 외부 시스템을 끌어다 사용한다. 흔히 사용하는게 <a href="http://windtale.net//disqus.com">Disqus</a>. 이 블로그에도 달려있는 녀석으로 소셜 댓글 시스템이라고 해야하나.. 자세한 사항은 홈페이지를 참고해보자. <del>비슷한 국내서비스로는 <a href="http://windtale.net//http://livere.com">LiveRe</a>라는 녀석이 있는데 얜 내 취향이 아니다.</del></p>
+
+<p>여튼, 이 녀석이 달려있는데 글 하단에 달린 녀석은 잘 작동하는데 글목록 등 메뉴에서 댓글 카운트를 가져오지 못하고 항상 &lsquo;0&#8217;으로 표시를 하는 것이다. 아마 Disqus가 2012년판으로 업그레이드 되면서 내부동작방식이 뭔가 수정이 된 모양이었다. 해결법을 열심히 뒤지기 시작.. 옥토프레스의 깃헙 이슈페이지에서 <a href="https://github.com/imathis/octopress/pull/277">2.1버전에서 해당 문제가 해결 되었다는 글</a>을 발견했다. 해결이 안된것 같은데..? <a href="https://github.com/imathis/octopress/pull/277/files">해당 이슈가 어떤식으로 소스에 반영되었는지</a> 코드를 살펴 보았다.<br/>
+아하, <code>source/_includes/article.html</code> 파일이 문제였구먼?</p>
+
+<h2>써드파티 테마 이슈</h2>
+
+<p>만약 옥토프레스의 기본 테마가 아닌 다른 개발자의 써드파티 테마를 사용하고 있다면 동일한 문제를 겪을 수 있다. <code>source/_includes</code> 디렉토리는 개별 테마에서 다루기 때문에, 메인소스와는 별개로 추가/수정된 내용을 반영해주어야 한다. 옥토프레스의 업데이트 절차에서 자동으로 해당 내용을 반영해줄 수 있을지 모르지만, <code>.themes</code> 디렉토리에서 관리되는 써드파티 테마의 경우 해당 수정사항을 반영해주지 못하기 때문에 테마를 재적용하거나 변경시 추가/수정된 내용이 누락될 수 있다. css를 수정하는 수준이 아닌 html 구조 자체를 변경하기 위해서는 조금이라도 로직이 섞인 템플릿 파일을 다루게 되고, 그렇게 원 저작자의 손을 떠난 소스는 어떻게 될지 알 수가 없다. 역시 유지보수는 어렵다.</p>
+
+<h2>그래서 결론</h2>
+
+<p>동일한 문제가 발생한 분들은,<br/>
+<code>source/_includes/article.html</code>, <code>source/_includes/archive_post.html</code> 파일의 <code>span.comments&gt;a</code>에 <code>data-disqus-identifier</code> 속성이 누락되진 않았는지 확인해보시면 됩니다. 만약 해당 속성이 누락되었다면 <a href="https://github.com/imathis/octopress/pull/277/files">해결법</a>을 참고해서 수정하세요.<br/>
+끝.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Github Pages+Octopress에서 커스텀 도메인 사용시 주의사항]]></title>
+    <link href="http://windtale.net/blog/using-custom-domain-with-octopress-in-github-pages/"/>
+    <updated>2013-01-28T11:57:00+09:00</updated>
+    <id>http://windtale.net/blog/using-custom-domain-with-octopress-in-github-pages</id>
+    <content type="html"><![CDATA[<p>근래 2~3일간 블로그 접속이 잘 안되었을 것이다.
+옥토프레스를 좀 건드려보다가 도메인 셋팅파일이 자꾸 날아가는 바람에 그렇게 되었다.
+나와 같은 환경에서 커스텀 도메인을 사용시 문제점과 필요한 셋팅에 대해 남겨본다.</p>
+
+<!--more-->
+
+
+<hr />
+
+<p><strong>[2013-07-11]</strong> 이 문제는 정식으로 보고되어 해결된 것으로 보인다. <a href="http://octopress.org/docs/deploying/github/">정식사이트의 Github Pages를 통한 배포</a>에서 <strong>Custom Domains</strong>부분을 참고하자.</p>
+
+<hr />
+
+<blockquote><p><em>Github Pages에 커스텀 도메인을 연결하는 법은 이 포스트에서 다루지 않는다. 관련해서는 <a href="http://dogfeet.github.com/articles/2012/github-pages.html">GitHub의 페이지 기능 이용하기 &ndash; dogfeet</a>를 참고하자.</em></p></blockquote>
+
+<p>여기서는 Github Pages+Octopress 환경에서 커스텀 도메인을 사용하는 법에 대해서만 간단히 다룬다.</p>
+
+<hr />
+
+<p>현재 이 블로그는 <a href="http://windtale.net//octopress.org">Octopress</a>를 이용해 정적 페이지를 생성하고, <a href="http://windtale.net//octopress.org/docs/deploying/github/">Github Pages에 배포</a>하는 방식으로 운영하고 있다. Github Pages는 <code>arkist.github.com</code> 같은 도메인 대신에 <code>windtale.net</code> 같은 <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">자신의 고유 도메인을 사용할 수 있는 기능</a>을 제공한다. 도메인쪽에는 DNS를 설정해주고 실제 운영되는 계정에는 해당 도메인이 적힌 CNAME 파일만 하나 있으면 된다.</p>
+
+<figure class='code'><figcaption><span>CNAME - windtale.net</span><a href='https://github.com/arkist/arkist.github.com/blob/master/CNAME'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>windtale.net
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>그런데 옥토프레스를 사용하면서 문제가 되는게.. 포스트를 작성하거나 뭔가 수정을 하면서 <code>rake generate</code>, <code>rake preview</code>, <code>rake watch</code> 명령을 사용하게 되는데, 이때 <strong>public 폴더의 내용을 통째로 갱신하면서 CNAME 파일을 삭제</strong>해버리는 것이다. 그래서 옥토프레스의 Rakefile에 다음과 같이 추가해 주었다.</p>
+
+<figure class='code'><figcaption><span>Rakefile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">task</span> <span class="ss">:deploy</span> <span class="k">do</span>
+</span><span class='line'>  <span class="c1"># Check if preview posts exist, which should not be published</span>
+</span><span class='line'>  <span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">exists?</span><span class="p">(</span><span class="s2">&quot;.preview-mode&quot;</span><span class="p">)</span>
+</span><span class='line'>    <span class="nb">puts</span> <span class="s2">&quot;## Found posts in preview mode, regenerating files ...&quot;</span>
+</span><span class='line'>    <span class="no">File</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">&quot;.preview-mode&quot;</span><span class="p">)</span>
+</span><span class='line'>    <span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">[</span><span class="ss">:generate</span><span class="o">].</span><span class="n">execute</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;## Generating CNAME, README&quot;</span>
+</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;echo windtale.net &gt; </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/CNAME&quot;</span>
+</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;echo Windtale.net Blog! &gt; </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/README&quot;</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;## Done!&quot;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">[</span><span class="ss">:copydot</span><span class="o">].</span><span class="n">invoke</span><span class="p">(</span><span class="n">source_dir</span><span class="p">,</span> <span class="n">public_dir</span><span class="p">)</span>
+</span><span class='line'>  <span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">[</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">deploy_default</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">].</span><span class="n">execute</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>위 소스상에서 9-12번째 라인이 추가한 부분다.
+deploy 명령을 실행하면 <code>deploy</code>를 구성하기전에 먼저 <code>public</code> 디렉토리에 <code>CNAME</code> 파일을 생성해 준다.
+그동안 파일생성 시점을 착각하고 generate쪽에 추가해뒀더니, preview시에 CNAME 파일이 삭제되는데도 모르고 지나쳤었다.
+<del>요번에 블로그 접속이 안되던게 그것 때문이었다-_&ndash;)</del></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[2013년 시작]]></title>
+    <link href="http://windtale.net/blog/new-year-2013/"/>
+    <updated>2013-01-03T12:30:00+09:00</updated>
+    <id>http://windtale.net/blog/new-year-2013</id>
+    <content type="html"><![CDATA[<p>빠르다. 벌써 2013년이다.<br/>
+뭔가 열심히 꾸려보자 블로그를 열었지만 이게 겨우 세번째. 게다가 꼴랑 세개 있는 글 중 &lsquo;시작&#8217;이 들어가는 제목이 두개. lol</p>
+
+<p>어쨌든 해가 가고, 또 해가 왔으니<br/>
+지난날을 돌아보고, 앞날을 생각해 봐야겠다.</p>
+
+<!--more-->
+
+
+<h2>2012년에는..</h2>
+
+<p>열심히 살았다고 하기엔 좀 한량처럼 지내기도 했고.. 그래도 서울로 상경해서 첫 일년. 이것저것 하면서 재밌게 지냈다.</p>
+
+<p>락공연을 다녔다거나 마라톤을 뛰었다거나 이런저런 얘긴 이 포스트에 기록하지 않는다. 일단은 기술관련 내용 위주의 블로그니까. 극히 개인적인건 페이스북에..<br/>
+그렇지만 이 포스트 자체는 기술적인 내용을 깊게 풀어나가진 않을것이다. 그러기엔 쌓아둔 얘기가 많아서 풀어놓을 자신이 없다. 회사얘기, 일얘기, 관심기술 얘기를 가볍게 가볍게 끄적여 본다.</p>
+
+<p><a href="http://xlgames.com">XL GAMES</a> 웹팀으로 이직해서 새로운 환경에서 훌륭한 동료들과 함께 한것은 <em>가장 큰 수확</em>이었다.<br/>
+그간 머리속에만 굴러다니던 생각들을 실제 업무에 적용할 수 있어 좋았다. 규모가 작아서 그런것도 있지만 동료들의 도움이 없이는 힘들었을 것이다.<br/>
+머릿속으로 생각만 하고 외부 사례를 보기만 하는것보다 직접 해보면서 여러 문제에 부딪히고 또 그것들을 해결/회피하는 과정에서 스스로 성장을 느낄 수 있어 즐거웠다. <del>그 과정을 글로 기록했으면 더 남는게 많았을텐데, 게으름 피우느라 그러지 못한게 아쉽다.</del><br/>
+<a href="http://sass-lang.com">sass</a>나 <a href="http://get-serve.org">serve</a> 등 마크업개발에 날개를 날아주는 녀석들의 도입과 사용 전략에 대해 많은 고민을 해볼 수 있었다. 여튼 우리팀 마크업 개발자들은 짱이다. 혼자서는 힘들었겠지.</p>
+
+<p>연말즈음에는 재미있는 프로젝트를 하나 했다. 올해 오픈베타서비스를 시작한 <a href="http://archeage.com">아키에이지</a>의 <a href="http://archeage.com/preview">프리뷰사이트</a> 개발이 그것.<br/>
+이게 참.. 여럿이 붙어서 다이나믹하게 고생고생하면서 만들었다. 그간 작업물 중 자바스크립트 규모가 가장 뻐근한 녀석이었다. <a href="http://requirejs.org">RequireJS</a>의 사용이라든지 단일페이지웹, 성능 튜닝을 위한 고민 등 만들면서 쏠쏠한 재미를 느낄 있었다. 언젠가 겪었던 이슈들이나 사용한 기술들, 개발하며 고려했던 사항들을 공유하고 싶다. <del>물론 이 또한 언제가 될 지 모른다는게 함정이다.</del></p>
+
+<p>우리팀의 개발파트장이셨고, 지금은 NHN NEXT의 교수이신 <a href="http://javajigi.net">자바지기</a>님의 <a href="http://slipp.net">SLiPP</a> 프로젝트에 참여하게 된 것도 큰 행운이다. Git과 GitHub의 사용법을 익히게 되었고 회사 업무보다 더 자유로운 서비스개발이 가능해서 즐거운 마음으로 조금씩 뚝딱거리고 있다. 아직 기여도는 1g도 안되지만 열심히 해볼 생각이다.</p>
+
+<h2>2013년에..</h2>
+
+<p>열심히 파고들어보려 하는 관심항목을 하나씩 풀어보겠다.</p>
+
+<ul>
+<li><strong>모바일</strong><br/>
+작년에 이것저것 배움도 많고 기회도 많았는데, 모바일쪽은 거의 신경을 쓰지 못하고 지냈다. 갈수록 모바일 비중이 높아지는데, 올해는 모바일에 신경을 좀 더 써보고 싶다.</li>
+<li><strong>css</strong><br/>
+지금 내가 하는일 중 매력적인 부분 하나가.. 게임 내부에 크로미움 기반 브라우저가 들어가서 css3를 자유롭게 쓸 수 있다는 것이다. 웹사이트 자체도 css3를 적극 사용하고 한국웹 특유의 <em>모든 브라우저에서 동일하게 보여야 해!</em> 마인드가 없어서 매우 즐겁고 합리적으로 일할 수 있다. 게다가 sass가 함께하고 있어 더욱 든든하다. 사실 css3 속성 쓰는거야 레퍼런스 뒤지면서 어렵지 않게 쓸 수 있다. 작년에 작업을 하면서 절절하게 느낀건 <strong>전략</strong>이 매우 중요하다는 것! 마크업은 이제 단순코딩이 아니다.</li>
+<li><strong>접근성</strong><br/>
+마크업 관련 커뮤니티에서 슬쩍슬쩍 활동을 하면서, &lsquo;웹퍼블리셔&#8217;라는 단어로 스스로 롤을 규정짓고 접근성에 대한 허상속에 빠진 몇몇 모습에 질려버렸다. 그런모습보다는 &#8216;프론트엔드 개발자&#8217;로써 더 나은 비전을 제시하기 위해 틈틈히 접근성에 대해 고민을 해보려 한다. &#8216;alt속성이 빠졌어요~&rsquo; 이런 이야기나 할 시기는 이미 한참전에 지났다.</li>
+<li><strong>프로그래밍</strong><br/>
+프로그래밍이라고는 했지만 거창한 건 아니고 언어를 몇개 배워보려고 한다. 일단 자바스크립트 베이스에, 작년에는 루비와 친해져보려고 기웃거렸는데 올해는 파이썬까지 한번 건드려볼까 한다. 이것저것 들쑤시는게 수박겉핥기라고 할 지 모르겠다. 괜찮다. 나는 특정언어를 잘하고 싶은게 아니라 프로그래밍을 기초부터 다시 해보고 싶은거니까.. 자바나 c가 아니라 루비/파이썬인 이유는 복잡하고 거창한 걸 하려는게 아니라 콘솔창에서 유틸들 깔짝깔짝대는게 재밌으니까.</li>
+<li><strong>꾸준히 지속적으로 뭔가하기</strong><br/>
+사실 이걸 제일 하고 싶다. 누군가 다른이에게도 제일 탐나는게 이거다. 나는 이게 굉장히 약하기 때문에.. 여기 적어놓으면 쪽팔려서라도 열심히 하겠지?</li>
+</ul>
+
+
+<hr />
+
+<h2>하자</h2>
+
+<p>고민만 하는 삶의 모습을 느리지만 조금씩 치워나가고 있다.<br/>
+<em>시작하자. 그리고 끝까지 하자! ;)</em></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sublime Text 유용한 기능과 단축키]]></title>
+    <link href="http://windtale.net/blog/sublime-text-tip/"/>
+    <updated>2012-09-24T21:57:00+09:00</updated>
+    <id>http://windtale.net/blog/sublime-text-tip</id>
+    <content type="html"><![CDATA[<h2>소개</h2>
+
+<p><a href="http://sublimetext.com">Sublime Text</a>를 쓰는 사람이 많이 늘었다. 맥/윈도우/리눅스를 지원하는 강력한 에디터이다. 심플함과 막강한 기능이 매력이다.</p>
+
+<p>무료로 사용할 수도 있지만, (하루에 한번꼴로 구매권유 팝업이 뜨긴 한다) $59를 지불하고 정품유저로 등록하면 모든 운영체제에서 사용할 수 있는 라이센스이고, 너무도 잘 만들어진 녀석이라 나도 하나 구입해서 사용중이다.</p>
+
+<p>공식 홈페이지나 문서에도 사용법이 나와 있긴 하지만,,
+지금 블로그에서 사용하고 있는 마크다운 방식을 손에 익히기도 할겸, 그리고 주변에서 간단하게 사용법과 팁을 소개해 줬으면 좋겠다는 요구가 좀 있어서 가볍게 정리해 보기로 했다.</p>
+
+<!--more-->
+
+
+<h2>자주 쓰게되는 단축키</h2>
+
+<ul>
+<li><p><strong>행 들여쓰기 · 내어쓰기</strong>
+win: <code>ctrl+[ · ctrl+]</code>, mac: <code>cmd+[ · cmd+]</code>
+기본적으로 탭키를 사용할 수도 있지만, 한참 코드를 작성하다가 행단위 들여쓰기를 제어하려면 이 방식이 편하기도.</p></li>
+<li><p><strong>행 상하 이동</strong>
+win: <code>ctrl+shift+↕</code>, mac: <code>cmd+ctrl+↕</code></p></li>
+<li><p><strong>코드블럭 접기 · 펴기</strong>
+win: <code>ctrl+shift+[ · ctrl+shift+]</code>, mac: <code>cmd+opt+[ · opt+shift+]</code></p></li>
+<li><p><strong>찾아바꾸기</strong>
+win: <code>ctrl+h</code>, mac: <code>cmd+opt+f</code></p></li>
+<li><p><strong>여러파일에서 찾기</strong>
+win: <code>ctrl+shift+f</code>, mac: <code>cmd+shift+f</code></p></li>
+<li><p><strong>GoTo Anything</strong>
+win: <code>ctrl+p</code>, mac: <code>cmd+p</code>
+GoTo Anything을 호출한다. 해당기능은 아래서 살펴볼 것이다.</p></li>
+<li><p><strong>Command Palette</strong>
+win: <code>ctrl+shift+p</code>, mac: <code>cmd+shift+p</code>
+Command Palette를 호출한다. 해당기능은 아래서 살펴볼 것이다.</p></li>
+</ul>
+
+
+<h2>유용한 기능</h2>
+
+<h3>프로젝트단위 관리</h3>
+
+<p>단일파일만 작업할 것이 아니라면 일단 프로젝트부터 생성하고 보자. 아래 살펴볼 <strong>GoTo Anything</strong>이나 검색등을 잘 활용하려면 프로젝트 단위로 관리를 하는 것이 좋다.
+상단 메뉴의 <strong>Project &ndash; Add Folder to~</strong> 메뉴로 작업공간을 프로젝트에 추가하자.</p>
+
+<h3>GoTo Anything</h3>
+
+<p><img src="http://windtale.net/images/posts/20120924/1.png" alt="GoTo Anything. 파일명에 'in'이라는 단어가 들어가는 파일을 찾고 있다"></p>
+
+<p>이름 그대로 어디로든 이동이 가능하다. 단축키를 외워두면 좋다. (위에 소개했다)<br/>
+실행하면 프로젝트 내의 모든 파일의 목록이 노출된다. 타이핑을 통해 목록에서 필터링을 통해 접근할 수 있다.<br/>
+예를 들면 <em>view/headContainer.html.erb</em>라는 파일에 접근하려는 경우 <code>view hc erb</code>라는 식으로 축약해 입력해도 목록에는 원하는 파일이 노출될 것이다.</p>
+
+<p>단순한 파일간 이동 뿐만이 아니라 파일내의 특정부분으로 이동도 가능하다 <code>:line 라인넘버</code>를 입력해서 파일의 특정라인으로의 접근이 가능하며, <code>@symbol 심볼명</code>을 통해 함수등 특정 심볼 정의로 이동하거나 <code>#word 단어</code>를 통한 특정단어위치로의 이동도 가능하다.</p>
+
+<p>심지어 파일이름과 특정부분을 조합한 이동도 가능하다.
+html을 수정하다가 <em>sass/common.scss</em>의 <em>#container 스타일 정의부분을 수정</em>할 일이 생겼다. 이 경우 Goto Anything에서 <code>sass comm #cont</code>만 입력하면 간단히 원하는 위치로 이동할 수 있을 것이다.
+멋지지 않은가? ;)</p>
+
+<h3>Command Palette</h3>
+
+<p><img src="http://windtale.net/images/posts/20120924/2.png" alt="Command Palette. 'install Package' 명령을 실행하기위해 간단히 'inst pa'라고 입력했다"></p>
+
+<p>커맨드 팔렛트는 마우스 대신 키보드로 명령을 입력해서 실행할 수 있는 강력한 도구다. 이것도 단축키를 외워두면 인생이 편해진다. (위에 소개했다)<br/>
+사용가능한 모든 메뉴가 노출되므로 하나하나 살펴보는 것도 좋고, <strong>GoTo Anything</strong>처럼 몇번의 타이핑으로 원하는 명령을 빠르게 찾을 수도 있다.<br/>
+예를 들면 아래서 살펴볼 <strong>Package Control</strong>의 경우, 단지 <code>paccon</code>이라고 입력하는 것으로 충분하다. <code>pcon</code>도 괜찮고 <code>pack</code>도 좋다.</p>
+
+<h3>Package Control</h3>
+
+<p><img src="http://windtale.net/images/posts/20120924/3.png" alt="Package Control의 Install Package 메뉴에서 패키지 목록을 둘러보고 있다. 패키지명과 간단한 설명이 노출된다"></p>
+
+<p>일단 서브라임 텍스트를 설치했으면 먼저 실행해야 하는 작업이 이 패키지 매니저란 녀석을 설치하는 것이다.<br/>
+서브라임에서는 &lsquo;패키지&#8217;라는 것이 &#8216;플러그인&#8217;의 개념이다. 패키지 매니저는 이름 그대로 서브라임이 지원하는 패키지를 관리할 수 있는 녀석이다.
+복잡한 인터페이스 없이 간단한 커맨드라인명령으로 관리가 가능하다.<br/>
+설치를 위해서는 먼저 콘솔창을 호출한다.</p>
+
+<p><strong>단축키</strong> <code>ctrl+`</code></p>
+
+<p>하단에 콘솔창이 열릴 것이다.
+아래의 내용을 복사해 콘솔창에 붙여넣고 실행(엔터)한다.</p>
+
+<blockquote><p>import urllib2,os; pf=&lsquo;Package Control.sublime-package&rsquo;; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),&lsquo;wb&rsquo;).write(urllib2.urlopen(&lsquo;<a href="http://sublime.wbond.net/">http://sublime.wbond.net/</a>&rsquo;+pf.replace(&lsquo; &rsquo;,&lsquo;%20&rsquo;)).read()); print &lsquo;Please restart Sublime Text to finish installation&rsquo;</p></blockquote>
+
+<p>콘솔에 <em>Please restart Sublime Text to finish installation</em>라는 메시지가 출력되는 것을 확인하고 프로그램을 재시작한다.</p>
+
+<p>만약 위의 명령으로 작동하지 않는다면 <a href="http://wbond.net/sublime_packages/package_control/installation">installation &ndash; Sublime Package Control</a>을 참고해서 다시한번  설치를 시도해보자.</p>
+
+<blockquote><p><strong>[2013-07-11]</strong> 현재 베타릴리즈 된 SublimeText3의 경우 위의 방식이 아닌 git을 통한 방법으로 설치를 해야한다. <a href="http://wbond.net/sublime_packages/package_control/installation#ST3">공식사이트의 설명</a>을 참고하자.</p></blockquote>
+
+<p>설치를 마쳤으면 이제 커맨드 팔레트를 열어 Package Control로 다룰 수 있는 명령들을 알아보자.<br/>
+많이 사용하는 명령은 다음과 같다.</p>
+
+<ul>
+<li><strong>Install Package</strong>: 패키지를 설치한다.</li>
+<li><strong>List Package</strong>: 설치된 패키지 목록을 확인한다.</li>
+<li><strong>Remove Package</strong>: 설치된 패키지를 삭제한다.</li>
+<li><strong>Update Package</strong>: 설치된 패키지에 업데이트사항이 있는지 확인하고, 업데이트 내역이 있을 경우 업데이트한다.</li>
+</ul>
+
+
+<p>더 자세한 내용은 <a href="http://wbond.net/sublime_packages/package_control">Sublime Package Control</a>에서 살펴볼 수 있다.</p>
+
+<h3>유용한 패키지 목록</h3>
+
+<blockquote><p><strong>[2013-07-11]</strong> SublimeText3의 경우 파이썬버전이 2.6 &ndash;> 3.3으로 변경되면서 호환되지 않는 패키지들이 있다. 호환성에 대해서는 <a href="https://github.com/wbond/sublime_package_control/wiki/Sublime-Text-3-Compatible-Packages">Sublime Package Control Wiki의 ST3 호환성리스트</a>를 참고하도록 하자.</p></blockquote>
+
+<p>내가 쓰고 있는 패키지는 다음과 같다. 코딩을 즐겁게 해준다 ;)</p>
+
+<ul>
+<li><p><strong><a href="https://github.com/facelessuser/BracketHighlighter">BracketHighlighter</a></strong><br/>
+블럭영역의 시작과 끝을 눈에 좀 더 잘 띄게(?) 해준다. 기본은 옅은 밑줄만 쳐져 있어 분간이 어려웠다.</p></li>
+<li><p><strong><a href="https://github.com/buymeasoda/soda-theme/">Theme &ndash; Soda</a></strong><br/>
+조금은 뚱뚱한 느낌이 드는 기본 테마를 변경해준다. Theme는 에디터 내부 문법강조 컬러를 변경해주는 Color Scheme과는 다른 개념으로, 프로그램 전체의 룩앤필을 칭한다.</p></li>
+<li><p><strong><a href="https://github.com/talltroym/sublime-theme-railscasts">RailsCasts Theme</a></strong><br/>
+위의 Theme와는 다르게 이건 Color Scheme을 변경해준다. RailsCast 스타일이다. 현재까지 써본것중엔 기본으로 포함된 Twilight과 함께 제일 편안한 색상이다.</p></li>
+<li><p><strong><a href="http://wbond.net/sublime_packages/package_control">Package Control</a></strong><br/>
+위에서 살펴보았다. 다양한 패키지를 커맨드 팔렛트에서 관리할 수 있도록 해준다.</p></li>
+<li><p><strong><a href="https://github.com/noklesta/SublimeQuickFileCreator">Quick File Creator</a></strong><br/>
+커맨드 팔렛트에서 파일, 폴더 등을 생성할 수 있다. 마우스 안녕~</p></li>
+<li><p><strong><a href="https://github.com/skuroda/Sublime-AdvancedNewFile">AdvancedNewFile</a></strong><br/>
+<strong>[2013.07.11]</strong> ST3 호환성문제로 위의 Quick File Creator를 대체할 녀석을 찾던 중 발견. 이쪽이 더 직관적이고 사용이 편하다.
+커맨드 한번으로 파일생성 가능. <code>hello/im/arkist/msg.markdown</code>식으로 입력하면 폴더들과 파일이 한번에 생성된다. 편하다!</p></li>
+<li><p><strong><a href="http://windtale.net//emmet.io">Emmet</a> (ZenCoding)</strong><br/>
+<a href="http://coding.smashingmagazine.com/2009/11/21/zen-coding-a-new-way-to-write-html-code/">젠코딩</a>을 가능하게 해준다. html 코딩할 때 이거 없으면 피곤하다.<br/>
+<strong>[2012.01.26]</strong> ZenCoding이 Emmet으로 진화했다. <a href="http://docs.emmet.io/css-abbreviations/fuzzy-search/">Fuzzy Search</a> 기능 최고!</p></li>
+<li><p><strong><a href="https://github.com/kuroir/SCSS.tmbundle">SCSS</a></strong><br/>
+<a href="http://sass-lang.com/">SCSS</a>를 위한 문법강조를 지원한다.</p></li>
+<li><p><strong><a href="https://github.com/buymeasoda/soda-theme/">ERB Insert and Toggle Commands</a></strong><br/>
+ERB 블럭 입력을 도와준다.</p></li>
+<li><p><strong><a href="https://github.com/Kronuz/SublimeCodeIntel">SublimeCodeIntel</a></strong><br/>
+코드인텔리전스 기능이다. 지원언어는 다음과 같다.</p>
+
+<blockquote><p>PHP, Python, RHTML, JavaScript, Smarty, Mason, Node.js, XBL, Tcl, HTML, HTML5, TemplateToolkit, XUL, Django, Perl, Ruby, Python3</p></blockquote></li>
+<li><p><strong><a href="http://wbond.net/sublime_packages/sftp">SFTP</a></strong><br/>
+FTP, FTPS, SFTP 지원을 위한 녀석.<br/>
+_유료. 이것도 라이센스키를 입력하지 않으면 구매권유 팝업이 뜬다.</p></li>
+<li><p><strong><a href="https://github.com/joelpt/sublimetext-automatic-backups">Automatic Backups</a></strong><br/>
+파일을 저장할때마다 백업본을 생성해준다.<br/>
+<strong>[2013.07.11]</strong> ST3 호환성을 위해 <a href="https://github.com/akalongman/sublimetext-autobackups">AutoBackups</a>로 대체.</p></li>
+</ul>
+
+
+<hr />
+
+<p>짦은 글이었는데 글 쓰는 시간이 제법 오래 걸렸다; 그동안 글정리를 너무 소홀히 한듯..<br/>
+새로운 내용이 생길때마다 이 포스트는 지속적으로 업데이트 할 것이다.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[블로그 새로 시작 (또!)]]></title>
+    <link href="http://windtale.net/blog/start-new-blog/"/>
+    <updated>2012-09-24T21:35:00+09:00</updated>
+    <id>http://windtale.net/blog/start-new-blog</id>
+    <content type="html"><![CDATA[<p>블로그를 다시 시작하기로 했다.
+여기는 기술관련된 내용 위주로 포스팅을 할 예정이다.</p>
+
+<p>그에 안 어울리게 <strong>WindTale</strong>이라는 이름을 달고 있지만, 그냥 일단 이 이름 그대로 가자.. 나중에 사이트를 구축해서 이 공간이 서브로 들어가거나 일상 위주 포스팅이 올라가는 또다른 블로그를 만들지도 모르겠다.</p>
+
+<p>어쨌든 그때까진 여긴 WindTale이다. <del>아직 연결은 안했지만 <a href="http://windtale.net">http://windtale.net</a> 도메인도 가지고 있고.. (지금은 옛날에 몇번 끄적이던 블로그로 연결된다)</del>
+(12/09/25) 도메인을 연결했다. 이제 <a href="http://windtale.net">windtale.net</a>으로 접속하면 이 블로그가 노출될 것이다. lol</p>
+
+<p>한없이 나태해지는걸 막기위해, 부지런히는 못하더라도 꾸준히 포스팅을 할 것이다.</p>
+
+<!--more-->
+
+
+<p>블로그 시스템은 정적페이지 기반의 블로깅엔진 <a href="http://octopress.org">Octopress</a>를 이용한다.
+마크다운형식으로 글을 작성하면 옥토프레스가 정적페이지를 생성해주고, 배포를 하게되면 <a href="http://github.com">Github</a>에 내 계정으로 커밋되어 실제 페이지를 렌더링 해주는 흥미로운 구조다.
+Ruby와 Git을 조금씩 공부하고 있는데, 공부도 할겸해서 한번 시도해 보았다.</p>
+
+<p>블로그 스킨은 반응형웹디자인으로 나름 깔끔하게 만들어진 <a href="https://github.com/tommy351/Octopress-Theme-Slash">Slash</a>라는 녀석을 가져다 조금 튜닝했다. 조금 튜닝하는데도 역시 남이 만든 소스라 그런지 엄청 헤맸다@_@
+일단 시작하는게 중요한거니까! 나중에 더 손보도록 한다.</p>
+
+<p>Node.js나 Ruby 따위들이 윈도와 상성이 좋지 않아 초기셋팅에 애를 좀 먹었지만, 어떻게든 해냈다.</p>
+
+<blockquote><p>윈도에서 옥토프레스에 도전하는 사람들을 위해 팁을 주자면, 콘솔에서 자꾸 인코딩 에러를 내뱉으면 마법의 명령어 <code>chcp 65001</code>를 시전해주자.</p></blockquote>
+
+<p>전체 시스템은 내 개인 <a href="http://dropbox.com">Dropbox</a>에 올라가 있어서 맥-윈도를 오가며 포스팅을 할 수 있고,
+실제 페이지들은 내 깃헙계정에서 서비스 되는 구조다.
+이제 쓸데없이 호스팅문제로 끙끙앓지 않아도 된다! lol <del>호스팅 받고 있는거 하나 있긴 하지만</del></p>
+
+<p>뭐 어쨌든 복잡한거 다 걷어내고 포스팅할땐 까만배경 에디터에다 키보드만 두드리니까 좋다. 글쓸맛도 나고.</p>
+
+<p>얼마나 할진 두고 봐야겠지만,
+해보자!</p>
+]]></content>
+  </entry>
+  
+</feed>
