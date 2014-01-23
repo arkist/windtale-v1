@@ -9,7 +9,9 @@ body{
 	font-family: $font-default;
 	font-weight: 300;
 	font-size: 14px;
-	background: $color-background image-url('retina_dust.png');
+	// background-color: $color-background;
+	background-color: #fff;
+	// background-image: image-url('retina_dust.png');
 	color: $color-gray01;
 	@media screen and (max-width: 1040px){
 		margin: 0 10px;
