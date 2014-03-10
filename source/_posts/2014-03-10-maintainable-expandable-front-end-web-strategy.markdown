@@ -174,10 +174,20 @@ css 제어에 있어서도 마찬가지다. 위의 쿼리를 응용해 살펴보
 *root node*가 무엇인가? 나는 다음의 세가지를 root node로 취급한다. 각각의 쓰임세와 함께 살펴보자.
 
 1. **`<html>`**: client의 상태에 대한 정보를 담는다.  
-css, js 속성의 지원여부나 모바일/데스크탑 등의 환경정보
+css, js 속성의 지원여부나 모바일/데스크탑 등의 환경정보  
+``` html
+<html class="js lt-ie10 cssAnimation mobile">
+```
 2. **`<body>`**: user의 상태에 대한 정보를 담는다.  
 접근중인 컨트롤러, 실행중인 액션, 로그인, AB테스트의 대상 여부 등 
+``` html
+<body class="logged-in myinfo abtest-a">
+```
 3. **모듈의 root(BEM에서의 *Block*)**: 개별 모듈의 상태에 대한 정보를 담는다. 
+``` html
+<div class="msgbox msgbox__unread">
+```
+
 
 어느곳에서 어떤 정보를 처리할지는 정답이 없다. 다만 이렇게 규칙을 정해두고 한정된 곳에서 상태들을 제어하면 컨트롤하기 수월하다. js에서 이벤트를 delegate 시키는것과도 비슷한 느낌이다. 핸들러가 흩어져 있으면 성능도 안좋고 제어하기도 힘든것처럼.. 
 
