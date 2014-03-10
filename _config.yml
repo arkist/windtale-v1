@@ -4,10 +4,10 @@
 
 url: http://windtale.net
 title: WindTale
-subtitle: "daily developer" 
-author: "진우"
+subtitle: daily developer 
+author: 진우
 simple_search: http://google.com/search
-description: ""
+description: 
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
