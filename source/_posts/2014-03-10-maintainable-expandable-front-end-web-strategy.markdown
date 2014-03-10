@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "유지보수와 확장성을 고려한 HTML/CSS 구조 만들기"
+title: "유지보수와 확장성을 고려한 HTML/CSS 구조 전략"
 date: 2014-03-10 22:10:46 +0900
 comments: true
 categories: html css
