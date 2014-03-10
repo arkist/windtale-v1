@@ -284,10 +284,33 @@
 <ol>
 <li><strong><code>&lt;html&gt;</code></strong>: client의 상태에 대한 정보를 담는다.<br/>
 css, js 속성의 지원여부나 모바일/데스크탑 등의 환경정보</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;html</span> <span class="na">class=</span><span class="s">&quot;js lt-ie10 cssAnimation mobile&quot;</span><span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
 <li><strong><code>&lt;body&gt;</code></strong>: user의 상태에 대한 정보를 담는다.<br/>
 접근중인 컨트롤러, 실행중인 액션, 로그인, AB테스트의 대상 여부 등</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;body</span> <span class="na">class=</span><span class="s">&quot;logged-in myinfo abtest-a&quot;</span><span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
 <li><strong>모듈의 root(BEM에서의 <em>Block</em>)</strong>: 개별 모듈의 상태에 대한 정보를 담는다.</li>
 </ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;msgbox msgbox__unread&quot;</span><span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>어느곳에서 어떤 정보를 처리할지는 정답이 없다. 다만 이렇게 규칙을 정해두고 한정된 곳에서 상태들을 제어하면 컨트롤하기 수월하다. js에서 이벤트를 delegate 시키는것과도 비슷한 느낌이다. 핸들러가 흩어져 있으면 성능도 안좋고 제어하기도 힘든것처럼..</p>

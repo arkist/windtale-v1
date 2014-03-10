@@ -4,7 +4,7 @@
   <title><![CDATA[Category: css | WindTale]]></title>
   <link href="http://windtale.net/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://windtale.net/"/>
-  <updated>2014-03-11T01:49:25+09:00</updated>
+  <updated>2014-03-11T01:57:44+09:00</updated>
   <id>http://windtale.net/</id>
   <author>
     <name><![CDATA[진우]]></name>
@@ -66,7 +66,7 @@
 <p><pre class="codepen" data-height="300" data-type="css" data-href="LCemy" data-user="arkist"><code> </code></pre>
 <script async src="http://codepen.io:/assets/embed/ei.js"></script></p>
 
-<p>네이밍은 언제나 고통스럽고 귀찮은 일이기 때문에 위처럼 태그<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>에 스타일을 먹이거나 DOM 탐색을 수행하는 경우가 자주 보인다.
+<p>네이밍은 언제나 고통스럽고 귀찮은 일이기 때문에 위처럼 태그[^1]에 스타일을 먹이거나 DOM 탐색을 수행하는 경우가 자주 보인다.
 하지만 html 태그는 얼마든지 중첩되어 쓰일 수 있다. 다음의 예제를 보자.</p>
 
 <p><pre class="codepen" data-height="300" data-type="css" data-href="ALjHu" data-user="arkist"><code> </code></pre>
@@ -208,12 +208,22 @@ var auth_info = $('.article &gt; .foot p &gt; .auth-info')
 
 <ol>
 <li><strong><code>&lt;html&gt;</code></strong>: client의 상태에 대한 정보를 담는다.<br/>
-css, js 속성의 지원여부나 모바일/데스크탑 등의 환경정보</li>
+css, js 속성의 지원여부나 모바일/데스크탑 등의 환경정보<br/>
+<code>html
+&lt;html class="js lt-ie10 cssAnimation mobile"&gt;
+</code></li>
 <li><strong><code>&lt;body&gt;</code></strong>: user의 상태에 대한 정보를 담는다.<br/>
-접근중인 컨트롤러, 실행중인 액션, 로그인, AB테스트의 대상 여부 등</li>
-<li><strong>모듈의 root(BEM에서의 <em>Block</em>)</strong>: 개별 모듈의 상태에 대한 정보를 담는다.</li>
+접근중인 컨트롤러, 실행중인 액션, 로그인, AB테스트의 대상 여부 등
+<code>html
+&lt;body class="logged-in myinfo abtest-a"&gt;
+</code></li>
+<li><strong>모듈의 root(BEM에서의 <em>Block</em>)</strong>: 개별 모듈의 상태에 대한 정보를 담는다.
+``` html</li>
 </ol>
 
+
+<p><div class="msgbox msgbox__unread">
+```</p>
 
 <p>어느곳에서 어떤 정보를 처리할지는 정답이 없다. 다만 이렇게 규칙을 정해두고 한정된 곳에서 상태들을 제어하면 컨트롤하기 수월하다. js에서 이벤트를 delegate 시키는것과도 비슷한 느낌이다. 핸들러가 흩어져 있으면 성능도 안좋고 제어하기도 힘든것처럼..</p>
 
@@ -252,14 +262,8 @@ css, js 속성의 지원여부나 모바일/데스크탑 등의 환경정보</li
 물론 여기 늘어놓은 내 생각들에 동의하지 않는 사람도 많을거라 생각한다. 그런분들은 정리하고 생각을 나눈 내 성의를 생각해서 아래 댓글로 자유롭게 토론을 해주시면 좋겠다. 내가 놓치거나 틀린 부분, 더 다듬을 수 있는 부분도 자유롭게 말씀 주시라.</p>
 
 <p>다음엔 미루고 미뤄둔 sass와 친구들에 대해서 포스팅 해 볼 생각이다.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>HTML 엘리먼트라고 하는것이 옳은지, HTML 태그라고 하는것이 옳은지 헷갈린다면 다음을 참고하자 <a href="http://en.wikipedia.org/wiki/HTML_element#Elements_vs._tags">http://en.wikipedia.org/wiki/HTML_element#Elements_vs._tags</a><a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
 
+<p>[^1]: HTML 엘리먼트라고 하는것이 옳은지, HTML 태그라고 하는것이 옳은지 헷갈린다면 다음을 참고하자 <a href="http://en.wikipedia.org/wiki/HTML_element#Elements_vs._tags">http://en.wikipedia.org/wiki/HTML_element#Elements_vs._tags</a></p>
 ]]></content>
   </entry>
   
