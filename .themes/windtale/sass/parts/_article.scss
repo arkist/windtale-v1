@@ -12,14 +12,14 @@ article{
 	h1.title{
 		font-size: 2.4em;
 		font-weight: 300;
-		line-height: 35px;
-		margin-bottom: 20px;
+		line-height: 1.4em;
+		margin-bottom: 40px;
 		a{
 			color: $color-gray01;
 		}
 	}
 	.entry-content{
-		line-height: 2;
+		line-height: 1.8em;
 		text-align: justify;
 		a{
 			&:hover{
@@ -40,7 +40,7 @@ article{
 			}
 		}
 		p, blockquote, ul, ol, dl, table, iframe, h1, h2, h3, h4, h5, h6, .video-container{
-			margin-top: 10px;
+			margin-top: 30px;
 		}
 		ul, ol, dl{
 			margin-left: 20px;
