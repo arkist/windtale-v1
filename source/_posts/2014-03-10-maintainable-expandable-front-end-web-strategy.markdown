@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "유지보수와 확장성을 고려한 HTML/CSS 구성 전략"
+title: "유지보수와 확장성을 고려한 HTML/CSS 구조 만들기"
 date: 2014-03-10 22:10:46 +0900
 comments: true
 categories: html css
@@ -10,6 +10,8 @@ categories: html css
 
 왜 웹개발자들은 java나 javascript는 어떻게든 잘 써보려고 노력하면서 html/css는 이토록 무관심한가. 왜 html/css 작업을 하는 사람들조차 좀 더 머리가 굵어지면 javascript, java 테크를 타려고만 하고 html/css를 버리는가. 
 그냥 내 눈에 띄지 않는것 뿐일까. 그럼 눈에 안띄는 이유는 무엇일까.
+
+<!-- more -->
 
 이 글은 웹접근성에 대한 이야기가 아니다.  
 기술적인 관점에서 어떻게 하면 html/css 그 자체를 좀 더 잘 써볼수 있을까에 대해서 그동안 고민해온 내용이다.  
