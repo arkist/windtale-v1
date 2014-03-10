@@ -4,7 +4,7 @@
   <title><![CDATA[WindTale]]></title>
   <link href="http://windtale.net/atom.xml" rel="self"/>
   <link href="http://windtale.net/"/>
-  <updated>2014-03-11T01:57:44+09:00</updated>
+  <updated>2014-03-11T01:59:51+09:00</updated>
   <id>http://windtale.net/</id>
   <author>
     <name><![CDATA[진우]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[유지보수와 확장성을 고려한 HTML/CSS 구조 만들기]]></title>
+    <title type="html"><![CDATA[유지보수와 확장성을 고려한 HTML/CSS 구조 전략]]></title>
     <link href="http://windtale.net/blog/maintainable-expandable-front-end-web-strategy/"/>
     <updated>2014-03-10T22:10:46+09:00</updated>
     <id>http://windtale.net/blog/maintainable-expandable-front-end-web-strategy</id>
