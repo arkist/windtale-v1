@@ -4,10 +4,10 @@
 
 url: http://windtale.net
 title: WindTale
-subtitle: daily developer 
+subtitle: daily developer
 author: 진우
 simple_search: http://google.com/search
-description: 
+description:
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -91,7 +91,7 @@ delicious_count: 3
 
 # Disqus Comments
 disqus_short_name: windtale1
-disqus_show_comment_count: true 
+disqus_show_comment_count: true
 
 # Google Analytics
 google_analytics_tracking_id: UA-38155854-1
