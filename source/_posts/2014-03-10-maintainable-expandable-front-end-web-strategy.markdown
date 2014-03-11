@@ -41,7 +41,7 @@ DOM handling이나 CSS styling을 하다보면 섬세하지 못한 설계 때문
 
 > This attribute assigns a name to an element. This name must be unique in a document.
 
-html 스펙을 살펴보면 id는 문서내에서 유일해야 한다고 되어있다. 이러한 스펙 때문에 단일 엘리먼트를 핸들링할때는 id를 사용하는 경우가 많. 하지만 **정말로 해당 이벤트나 스타일이 단 한번만 사용하게 될지** 충분히 고민해야한다. 자신이 없다면 그냥 className을 사용하는것을 추천한다.
+html 스펙에서 id에 대한 내용이다. id는 문서내에서 유일해야 한다고 되어있다. 이러한 스펙 때문에 단일 엘리먼트를 핸들링할때는 id를 사용하는 경우가 많. 하지만 **정말로 해당 이벤트나 스타일이 단 한번만 사용하게 될지** 충분히 고민해야한다. 자신이 없다면 그냥 className을 사용하는것을 추천한다.
 
 ### 태그선택자의 사용을 지양하자
 
@@ -140,11 +140,11 @@ css 제어에 있어서도 마찬가지다. 위의 쿼리를 응용해 살펴보
 만약 여기서 `.auth-info`의 배경색을 빨간색으로 오버라이드하고 싶다면, 어느 부분에 변경자 클래스를 추가해야 할까? 가능한 경우의 수는 다음과 같다.
 
 1. `.article` 앞 
-2. `.article`자신 (`.aricle.article-red`)
+2. `.article` 자신 (`.aricle.article-red`)
 3. `.foot`과 `.article` 사이
-4. `.foot`자신 (`.foot.foot-red`)
+4. `.foot` 자신 (`.foot.foot-red`)
 5. `.foot`과 `.auth-info` 사이
-6. `.auth-info`자신 (`.auth-info.auth-info__red`)
+6. `.auth-info` 자신 (`.auth-info.auth-info__red`)
 
 정말 끔찍하다. 어느부분에 클래스를 추가할지 감이 안온다. 탐색레벨이 깊어질 수록 경우의 수는 더욱 늘어난다.
 
@@ -152,14 +152,14 @@ css 제어에 있어서도 마찬가지다. 위의 쿼리를 응용해 살펴보
 
 ``` css
 .article-auth-info {
-    background-yellow;
+    background-color: yellow;
 }
 ```
 
 이제 가능한 경우의 수는 다음과 같다.
 
-1. `.article-auth-info`보다 앞
-2. `.article-auth-info`자신 (`.article-auth-info.article-auth-info__red`)
+1. `.article-auth-info` 앞
+2. `.article-auth-info` 자신 (`.article-auth-info.article-auth-info__red`)
 
 줄어든 탐색레벨만큼 고민도 줄었다 lol (물론 이건 css 얘기고, html에서는 아직 문제가 해결된 것이 아니다)
 
@@ -202,7 +202,7 @@ css, js 속성의 지원여부나 모바일/데스크탑 등의 환경정보
 
 많은이들이 익히 알다시피 자바스크립트 전역변수를 사용하는건 별로 아름답지 못한 아이디어다. 그렇다면 이 데이터들은 어디에다 실어서 통신을 해야하나.
 
-나는 [HTML5 스펙의 `data-*`](http://www.w3.org/TR/html5/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes)에서 답을 찾았다.
+나는 [HTML5 스펙의 `data-*` attribute](http://www.w3.org/TR/html5/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes)에서 답을 찾았다.
 
 > Custom data attributes are intended to store custom data private to the page or application, for which there are no more appropriate attributes or elements.
 
