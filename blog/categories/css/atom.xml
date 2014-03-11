@@ -4,7 +4,7 @@
   <title><![CDATA[Category: css | WindTale]]></title>
   <link href="http://windtale.net/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://windtale.net/"/>
-  <updated>2014-03-11T01:59:51+09:00</updated>
+  <updated>2014-03-11T23:32:19+09:00</updated>
   <id>http://windtale.net/</id>
   <author>
     <name><![CDATA[진우]]></name>
@@ -57,7 +57,7 @@
 
 <blockquote><p>This attribute assigns a name to an element. This name must be unique in a document.</p></blockquote>
 
-<p>html 스펙을 살펴보면 id는 문서내에서 유일해야 한다고 되어있다. 이러한 스펙 때문에 단일 엘리먼트를 핸들링할때는 id를 사용하는 경우가 많. 하지만 <strong>정말로 해당 이벤트나 스타일이 단 한번만 사용하게 될지</strong> 충분히 고민해야한다. 자신이 없다면 그냥 className을 사용하는것을 추천한다.</p>
+<p>html 스펙에서 id에 대한 내용이다. id는 문서내에서 유일해야 한다고 되어있다. 이러한 스펙 때문에 단일 엘리먼트를 핸들링할때는 id를 사용하는 경우가 많. 하지만 <strong>정말로 해당 이벤트나 스타일이 단 한번만 사용하게 될지</strong> 충분히 고민해야한다. 자신이 없다면 그냥 className을 사용하는것을 추천한다.</p>
 
 <h3>태그선택자의 사용을 지양하자</h3>
 
@@ -166,11 +166,11 @@ var auth_info = $('.article &gt; .foot p &gt; .auth-info')
 
 <ol>
 <li><code>.article</code> 앞</li>
-<li><code>.article</code>자신 (<code>.aricle.article-red</code>)</li>
+<li><code>.article</code> 자신 (<code>.aricle.article-red</code>)</li>
 <li><code>.foot</code>과 <code>.article</code> 사이</li>
-<li><code>.foot</code>자신 (<code>.foot.foot-red</code>)</li>
+<li><code>.foot</code> 자신 (<code>.foot.foot-red</code>)</li>
 <li><code>.foot</code>과 <code>.auth-info</code> 사이</li>
-<li><code>.auth-info</code>자신 (<code>.auth-info.auth-info__red</code>)</li>
+<li><code>.auth-info</code> 자신 (<code>.auth-info.auth-info__red</code>)</li>
 </ol>
 
 
@@ -181,7 +181,7 @@ var auth_info = $('.article &gt; .foot p &gt; .auth-info')
 <p>``` css
 .article-auth-info {</p>
 
-<pre><code>background-yellow;
+<pre><code>background-color: yellow;
 </code></pre>
 
 <p>}
@@ -190,8 +190,8 @@ var auth_info = $('.article &gt; .foot p &gt; .auth-info')
 <p>이제 가능한 경우의 수는 다음과 같다.</p>
 
 <ol>
-<li><code>.article-auth-info</code>보다 앞</li>
-<li><code>.article-auth-info</code>자신 (<code>.article-auth-info.article-auth-info__red</code>)</li>
+<li><code>.article-auth-info</code> 앞</li>
+<li><code>.article-auth-info</code> 자신 (<code>.article-auth-info.article-auth-info__red</code>)</li>
 </ol>
 
 
@@ -238,7 +238,7 @@ css, js 속성의 지원여부나 모바일/데스크탑 등의 환경정보<br/
 
 <p>많은이들이 익히 알다시피 자바스크립트 전역변수를 사용하는건 별로 아름답지 못한 아이디어다. 그렇다면 이 데이터들은 어디에다 실어서 통신을 해야하나.</p>
 
-<p>나는 <a href="http://www.w3.org/TR/html5/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes">HTML5 스펙의 <code>data-*</code></a>에서 답을 찾았다.</p>
+<p>나는 <a href="http://www.w3.org/TR/html5/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes">HTML5 스펙의 <code>data-*</code> attribute</a>에서 답을 찾았다.</p>
 
 <blockquote><p>Custom data attributes are intended to store custom data private to the page or application, for which there are no more appropriate attributes or elements.</p></blockquote>
 
