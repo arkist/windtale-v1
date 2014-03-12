@@ -4,7 +4,7 @@
   <title><![CDATA[WindTale]]></title>
   <link href="http://windtale.net/atom.xml" rel="self"/>
   <link href="http://windtale.net/"/>
-  <updated>2014-03-12T00:45:15+09:00</updated>
+  <updated>2014-03-12T12:10:13+09:00</updated>
   <id>http://windtale.net/</id>
   <author>
     <name><![CDATA[진우]]></name>
@@ -59,6 +59,9 @@
 
 <p>html 스펙에서 id에 대한 내용이다. id는 문서내에서 유일해야 한다고 되어있다. 이러한 스펙 때문에 단일 엘리먼트를 핸들링할때는 id를 사용하는 경우가 많. 하지만 <strong>정말로 해당 이벤트나 스타일이 단 한번만 사용하게 될지</strong> 충분히 고민해야한다. 자신이 없다면 그냥 className을 사용하는것을 추천한다.</p>
 
+<p>성능이나 기타 이유로 id 사용을 피할 수 없다면, 스펙을 어기는 일이 안생기도록 충분히 unique한 네이밍을 해야 할 것이다.
+<em>(나는 최근에도 한 페이지에 <code>#container</code>라는 아이디가 두개 있는 것을 보았다)</em></p>
+
 <h3>태그선택자의 사용을 지양하자</h3>
 
 <p>먼저 예제코드를 보자.</p>
@@ -110,9 +113,6 @@
 <p><em><code>#job</code>이 <code>#article</code> 내부로 들어가 버렸다. <strong>이제 <code>#job .info</code> 테이블은 <code>#article .info</code>의 스타일을 그대로 상속받게 되었다.</strong></em> 세상에. <code>.active</code>처럼 상태를 나타내는 클래스를 상속받는 경우는 문제가 더욱 심각할 것이다.</p>
 
 <p>혼자서 작업하는 경우에는 내가 무슨 단어를 사용했었는지 외우면 그만이라 생각할 수 있다. (물론 절대 추천하지는 않는다) 하지만 여럿이서 작업을 하고 있다면 지금 당장 짧고 단순한 네이밍은 그만두자. <strong>사실 세상에 혼자 짜는 코드라는건 없다.</strong></p>
-
-<p>성능이나 기타 이유로 id 사용을 피할 수 없다면, 스펙을 어기는 일이 안생기도록 충분히 unique한 네이밍을 해야 할 것이다.
-<em>(나는 최근에도 한 페이지에 <code>#container</code>라는 아이디가 두개 있는 것을 보았다)</em></p>
 
 <h3>모듈화를 생각하자</h3>
 
