@@ -4,7 +4,7 @@
   <title><![CDATA[WindTale]]></title>
   <link href="http://windtale.net/atom.xml" rel="self"/>
   <link href="http://windtale.net/"/>
-  <updated>2014-04-13T23:33:02+09:00</updated>
+  <updated>2014-04-13T23:43:36+09:00</updated>
   <id>http://windtale.net/</id>
   <author>
     <name><![CDATA[진우]]></name>
@@ -474,7 +474,7 @@ css, js 속성의 지원여부나 모바일/데스크탑 등의 환경정보</li
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Flask-SQLAlchemy, sqlalchemy-migrate 대신 SQLAlchemy, alembic 써보기]]></title>
+    <title type="html"><![CDATA[Flask-SQLAlchemy, Sqlalchemy-migrate 대신 SQLAlchemy, Alembic 써보기]]></title>
     <link href="http://windtale.net/blog/flask-sqlalchemy-migrate-and-alembic/"/>
     <updated>2014-01-24T03:15:35+09:00</updated>
     <id>http://windtale.net/blog/flask-sqlalchemy-migrate-and-alembic</id>
