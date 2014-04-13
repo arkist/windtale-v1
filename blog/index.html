@@ -1,115 +1,88 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>WindTale</title>
-  <meta name="author" content="진우">
+	<meta charset="utf-8">
+	<title>WindTale</title>
+	<meta name="author" content="진우">
 
-  
-  <meta name="description" content="css preprocessor라는 녀석들이 있다.
+	
+	<meta name="description" content="css preprocessor라는 녀석들이 있다.
 css의 태생적 한계를 극복하기 위해 나온 것으로 대표적으론 Sass, less, stylus가 있다. css는 쉽고 간단하지만 갈수록 요구사항은 복잡해지고 있고 유지보수도 힘든 형태가 되어가고 있다.
 Sass등은 &hellip;">
-  
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://windtale.net/blog">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="WindTale" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-38155854-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-
+  	
+	<link rel="canonical" href="http://windtale.net/blog">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/atom.xml" rel="alternate" title="WindTale" type="application/atom+xml">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">WindTale</a></h1>
-  
-    <h2>daily developer</h2>
-  
-</hgroup>
+<body >
+	<header role="banner" id="header" class="inner"><h1 class="site-title"><a href="/">WindTale</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">blog</a></li>
+	<li><a href="/blog/archives">archives</a></li>
+	<li><a href="/about">about</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">blog</a></li>
+	<li><a href="/blog/archives">archives</a></li>
+	<li><a href="/about">about</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:windtale.net">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+		<a class="github" href="https://github.com/arkist" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:windtale.net">
+	</form>
+</nav>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:windtale.net" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      
+	
+		
+	
+	<div id="content" class="inner">
 
 
     <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/why-i-choose-sass/">내가 Sass를 선택한 이유</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-13T19:15:27+09:00" pubdate data-updated="true">Apr 13<span>th</span>, 2014</time>
-        
-           | <a href="/blog/why-i-choose-sass/#disqus_thread"
-             data-disqus-identifier="http://windtale.net/blog/why-i-choose-sass/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>css preprocessor라는 녀석들이 있다.<br/>
+	<h1 class="title"><a href="/blog/why-i-choose-sass/">내가 Sass를 선택한 이유</a></h1>
+	<div class="entry-content">
+		<p>css preprocessor라는 녀석들이 있다.<br/>
 css의 태생적 한계를 극복하기 위해 나온 것으로 대표적으론 <a href="http://sass-lang.com/">Sass</a>, <a href="http://lesscss.org/">less</a>, <a href="http://learnboost.github.io/stylus/">stylus</a>가 있다.</p>
 
 <p>css는 쉽고 간단하지만 갈수록 요구사항은 복잡해지고 있고 유지보수도 힘든 형태가 되어가고 있다.<br/>
@@ -117,316 +90,288 @@ Sass등은 변수, 함수, 확장/상속 등의 기능을 통해 해결한다. �
 
 <p>그 중에서도 나는 Sass를 가장 선호하는데, 이번 포스팅에서는 그에 대해 풀어보려 한다.</p>
 
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/why-i-choose-sass/">더보기</a>
-    </footer>
+
+		
+		<a href="/blog/why-i-choose-sass/" class="more-link">더보기</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">&nbsp;
+
+
+
+
+
+
+
+
   
 
-</article>
+
+<time datetime="2014-04-13T19:15:27+09:00" pubdate data-updated="true">Apr 13<span>th</span>, 2014</time></div>
+	<div class="tags">&nbsp;
+
+
+	<a class='category' href='/blog/categories/sass/'>Sass</a>, <a class='category' href='/blog/categories/css/'>css</a>, <a class='category' href='/blog/categories/less/'>less</a>, <a class='category' href='/blog/categories/stylus/'>stylus</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/why-i-choose-sass//blog/index.html#disqus_thread" data-disqus-identifier="http://windtale.net/blog/why-i-choose-sass/">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/maintainable-expandable-front-end-web-strategy/">유지보수와 확장성을 고려한 HTML/CSS 구조 전략</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-10T22:10:46+09:00" pubdate data-updated="true">Mar 10<span>th</span>, 2014</time>
-        
-           | <a href="/blog/maintainable-expandable-front-end-web-strategy/#disqus_thread"
-             data-disqus-identifier="http://windtale.net/blog/maintainable-expandable-front-end-web-strategy/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>전부터 생각해 오던것이 있었다.</p>
+	<h1 class="title"><a href="/blog/maintainable-expandable-front-end-web-strategy/">유지보수와 확장성을 고려한 HTML/CSS 구조 전략</a></h1>
+	<div class="entry-content">
+		<p>전부터 생각해 오던것이 있었다.</p>
 
 <p>왜 웹개발자들은 java나 javascript는 어떻게든 잘 써보려고 노력하면서 html/css는 이토록 무관심한가. 왜 html/css 작업을 하는 사람들조차 좀 더 머리가 굵어지면 javascript, java 테크를 타려고만 하고 html/css를 버리는가.
 그냥 내 눈에 띄지 않는것 뿐일까. 그럼 눈에 안띄는 이유는 무엇일까.</p>
 
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/maintainable-expandable-front-end-web-strategy/">더보기</a>
-    </footer>
+
+		
+		<a href="/blog/maintainable-expandable-front-end-web-strategy/" class="more-link">더보기</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">&nbsp;
+
+
+
+
+
+
+
+
   
 
-</article>
+
+<time datetime="2014-03-10T22:10:46+09:00" pubdate data-updated="true">Mar 10<span>th</span>, 2014</time></div>
+	<div class="tags">&nbsp;
+
+
+	<a class='category' href='/blog/categories/css/'>css</a>, <a class='category' href='/blog/categories/html/'>html</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/maintainable-expandable-front-end-web-strategy//blog/index.html#disqus_thread" data-disqus-identifier="http://windtale.net/blog/maintainable-expandable-front-end-web-strategy/">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/flask-sqlalchemy-migrate-and-alembic/">Flask-SQLAlchemy, Sqlalchemy-migrate 대신 SQLAlchemy, Alembic 써보기</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-24T03:15:35+09:00" pubdate data-updated="true">Jan 24<span>th</span>, 2014</time>
-        
-           | <a href="/blog/flask-sqlalchemy-migrate-and-alembic/#disqus_thread"
-             data-disqus-identifier="http://windtale.net/blog/flask-sqlalchemy-migrate-and-alembic/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>요즘 <a href="http://flask.pocoo.org/">Flask</a>를 조금씩 보고있다.</p>
+	<h1 class="title"><a href="/blog/flask-sqlalchemy-migrate-and-alembic/">Flask-SQLAlchemy, Sqlalchemy-migrate 대신 SQLAlchemy, Alembic 써보기</a></h1>
+	<div class="entry-content">
+		<p>요즘 <a href="http://flask.pocoo.org/">Flask</a>를 조금씩 보고있다.</p>
 
 <p><a href="http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iv-database">The Flask Mega-Tutorial, Part IV: Database</a>를 진행하다가, flask-sqlalchemy, sqlalchemy-migrate 대신에 sqlalchemy, alembic 조합으로 갈아타게 된 경험을 정리해볼까 한다.<br/>
 서버사이드 웹개발에 대한 (혹은 데이터베이스에 대한?) 이해가 거의 없는 상태에서 정리하는 글이라, 잘못된 부분이 많을수도 있겠다.</p>
 
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/flask-sqlalchemy-migrate-and-alembic/">더보기</a>
-    </footer>
+
+		
+		<a href="/blog/flask-sqlalchemy-migrate-and-alembic/" class="more-link">더보기</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">&nbsp;
+
+
+
+
+
+
+
+
   
 
-</article>
+
+<time datetime="2014-01-24T03:15:35+09:00" pubdate data-updated="true">Jan 24<span>th</span>, 2014</time></div>
+	<div class="tags">&nbsp;
+
+
+	<a class='category' href='/blog/categories/alembic/'>alembic</a>, <a class='category' href='/blog/categories/flask/'>flask</a>, <a class='category' href='/blog/categories/python/'>python</a>, <a class='category' href='/blog/categories/sqlalchemy/'>sqlalchemy</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/flask-sqlalchemy-migrate-and-alembic//blog/index.html#disqus_thread" data-disqus-identifier="http://windtale.net/blog/flask-sqlalchemy-migrate-and-alembic/">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/new-year-2014/">2014년 시작</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-01T23:46:03+09:00" pubdate data-updated="true">Jan 1<span>st</span>, 2014</time>
-        
-           | <a href="/blog/new-year-2014/#disqus_thread"
-             data-disqus-identifier="http://windtale.net/blog/new-year-2014/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>2014년이 와버렸다.<br/>
+	<h1 class="title"><a href="/blog/new-year-2014/">2014년 시작</a></h1>
+	<div class="entry-content">
+		<p>2014년이 와버렸다.<br/>
 지난 2013년은 쉽지 않은 한해였다.</p>
 
 <p>&lsquo;2013년 시작&#8217;이라는 글을 쓴지 얼마 지나지 않은것 같은데 벌써 1년이 지나가 버렸다.<br/>
 한페이지에 2013년 시작 포스트와 2014년 시작 포스트가 한화면에 있는 모습을 보니 묘한 죄책감이 든다. 음.</p>
 
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/new-year-2014/">더보기</a>
-    </footer>
+
+		
+		<a href="/blog/new-year-2014/" class="more-link">더보기</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">&nbsp;
+
+
+
+
+
+
+
+
   
 
-</article>
+
+<time datetime="2014-01-01T23:46:03+09:00" pubdate data-updated="true">Jan 1<span>st</span>, 2014</time></div>
+	<div class="tags">&nbsp;
+
+
+	<a class='category' href='/blog/categories/daily/'>daily</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/new-year-2014//blog/index.html#disqus_thread" data-disqus-identifier="http://windtale.net/blog/new-year-2014/">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/octopress-disqus-count-problem/">Octopress - 글목록에서 Disqus 댓글 카운트가 항상 &#8216;0&#8217;일 때</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-29T15:36:00+09:00" pubdate data-updated="true">Jan 29<span>th</span>, 2013</time>
-        
-           | <a href="/blog/octopress-disqus-count-problem/#disqus_thread"
-             data-disqus-identifier="http://windtale.net/blog/octopress-disqus-count-problem/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>요며칠 옥토프레스 자잘한 문제들을 수정하고 있다.<br/>
+	<h1 class="title"><a href="/blog/octopress-disqus-count-problem/">Octopress - 글목록에서 Disqus 댓글 카운트가 항상 &#8216;0&#8217;일 때</a></h1>
+	<div class="entry-content">
+		<p>요며칠 옥토프레스 자잘한 문제들을 수정하고 있다.<br/>
 이번엔 blog, archives 메뉴에서 댓글이 &lsquo;0&#8217;으로 나오는 문제를 해결.</p>
 
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/octopress-disqus-count-problem/">더보기</a>
-    </footer>
+
+		
+		<a href="/blog/octopress-disqus-count-problem/" class="more-link">더보기</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">&nbsp;
+
+
+
+
+
+
+
+
   
 
-</article>
+
+<time datetime="2013-01-29T15:36:00+09:00" pubdate data-updated="true">Jan 29<span>th</span>, 2013</time></div>
+	<div class="tags">&nbsp;
+
+
+	<a class='category' href='/blog/categories/octopress/'>octopress</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/octopress-disqus-count-problem//blog/index.html#disqus_thread" data-disqus-identifier="http://windtale.net/blog/octopress-disqus-count-problem/">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/using-custom-domain-with-octopress-in-github-pages/">Github Pages+Octopress에서 커스텀 도메인 사용시 주의사항</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-28T11:57:00+09:00" pubdate data-updated="true">Jan 28<span>th</span>, 2013</time>
-        
-           | <a href="/blog/using-custom-domain-with-octopress-in-github-pages/#disqus_thread"
-             data-disqus-identifier="http://windtale.net/blog/using-custom-domain-with-octopress-in-github-pages/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>근래 2~3일간 블로그 접속이 잘 안되었을 것이다.
+	<h1 class="title"><a href="/blog/using-custom-domain-with-octopress-in-github-pages/">Github Pages+Octopress에서 커스텀 도메인 사용시 주의사항</a></h1>
+	<div class="entry-content">
+		<p>근래 2~3일간 블로그 접속이 잘 안되었을 것이다.
 옥토프레스를 좀 건드려보다가 도메인 셋팅파일이 자꾸 날아가는 바람에 그렇게 되었다.
 나와 같은 환경에서 커스텀 도메인을 사용시 문제점과 필요한 셋팅에 대해 남겨본다.</p>
 
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/using-custom-domain-with-octopress-in-github-pages/">더보기</a>
-    </footer>
+
+		
+		<a href="/blog/using-custom-domain-with-octopress-in-github-pages/" class="more-link">더보기</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">&nbsp;
+
+
+
+
+
+
+
+
   
 
-</article>
+
+<time datetime="2013-01-28T11:57:00+09:00" pubdate data-updated="true">Jan 28<span>th</span>, 2013</time></div>
+	<div class="tags">&nbsp;
+
+
+	<a class='category' href='/blog/categories/octopress/'>octopress</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/using-custom-domain-with-octopress-in-github-pages//blog/index.html#disqus_thread" data-disqus-identifier="http://windtale.net/blog/using-custom-domain-with-octopress-in-github-pages/">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/new-year-2013/">2013년 시작</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-03T12:30:00+09:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2013</time>
-        
-           | <a href="/blog/new-year-2013/#disqus_thread"
-             data-disqus-identifier="http://windtale.net/blog/new-year-2013/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>빠르다. 벌써 2013년이다.<br/>
+	<h1 class="title"><a href="/blog/new-year-2013/">2013년 시작</a></h1>
+	<div class="entry-content">
+		<p>빠르다. 벌써 2013년이다.<br/>
 뭔가 열심히 꾸려보자 블로그를 열었지만 이게 겨우 세번째. 게다가 꼴랑 세개 있는 글 중 &lsquo;시작&#8217;이 들어가는 제목이 두개. lol</p>
 
 <p>어쨌든 해가 가고, 또 해가 왔으니<br/>
 지난날을 돌아보고, 앞날을 생각해 봐야겠다.</p>
 
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/new-year-2013/">더보기</a>
-    </footer>
+
+		
+		<a href="/blog/new-year-2013/" class="more-link">더보기</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">&nbsp;
+
+
+
+
+
+
+
+
   
 
-</article>
+
+<time datetime="2013-01-03T12:30:00+09:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2013</time></div>
+	<div class="tags">&nbsp;
+
+
+	<a class='category' href='/blog/categories/daily/'>daily</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/new-year-2013//blog/index.html#disqus_thread" data-disqus-identifier="http://windtale.net/blog/new-year-2013/">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/sublime-text-tip/">Sublime Text 유용한 기능과 단축키</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-24T21:57:00+09:00" pubdate data-updated="true">Sep 24<span>th</span>, 2012</time>
-        
-           | <a href="/blog/sublime-text-tip/#disqus_thread"
-             data-disqus-identifier="http://windtale.net/blog/sublime-text-tip/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>소개</h2>
+	<h1 class="title"><a href="/blog/sublime-text-tip/">Sublime Text 유용한 기능과 단축키</a></h1>
+	<div class="entry-content">
+		<h2>소개</h2>
 
 <p><a href="http://sublimetext.com">Sublime Text</a>를 쓰는 사람이 많이 늘었다. 맥/윈도우/리눅스를 지원하는 강력한 에디터이다. 심플함과 막강한 기능이 매력이다.</p>
 
@@ -435,47 +380,43 @@ Sass등은 변수, 함수, 확장/상속 등의 기능을 통해 해결한다. �
 <p>공식 홈페이지나 문서에도 사용법이 나와 있긴 하지만,,
 지금 블로그에서 사용하고 있는 마크다운 방식을 손에 익히기도 할겸, 그리고 주변에서 간단하게 사용법과 팁을 소개해 줬으면 좋겠다는 요구가 좀 있어서 가볍게 정리해 보기로 했다.</p>
 
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/sublime-text-tip/">더보기</a>
-    </footer>
+
+		
+		<a href="/blog/sublime-text-tip/" class="more-link">더보기</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">&nbsp;
+
+
+
+
+
+
+
+
   
 
-</article>
+
+<time datetime="2012-09-24T21:57:00+09:00" pubdate data-updated="true">Sep 24<span>th</span>, 2012</time></div>
+	<div class="tags">&nbsp;
+
+
+	<a class='category' href='/blog/categories/sublimetext/'>sublimetext</a>, <a class='category' href='/blog/categories/tool/'>tool</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/sublime-text-tip//blog/index.html#disqus_thread" data-disqus-identifier="http://windtale.net/blog/sublime-text-tip/">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/start-new-blog/">블로그 새로 시작 (또!)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-24T21:35:00+09:00" pubdate data-updated="true">Sep 24<span>th</span>, 2012</time>
-        
-           | <a href="/blog/start-new-blog/#disqus_thread"
-             data-disqus-identifier="http://windtale.net/blog/start-new-blog/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>블로그를 다시 시작하기로 했다.
+	<h1 class="title"><a href="/blog/start-new-blog/">블로그 새로 시작 (또!)</a></h1>
+	<div class="entry-content">
+		<p>블로그를 다시 시작하기로 했다.
 여기는 기술관련된 내용 위주로 포스팅을 할 예정이다.</p>
 
 <p>그에 안 어울리게 <strong>WindTale</strong>이라는 이름을 달고 있지만, 그냥 일단 이 이름 그대로 가자.. 나중에 사이트를 구축해서 이 공간이 서브로 들어가거나 일상 위주 포스팅이 올라가는 또다른 블로그를 만들지도 모르겠다.</p>
@@ -485,30 +426,56 @@ Sass등은 변수, 함수, 확장/상속 등의 기능을 통해 해결한다. �
 
 <p>한없이 나태해지는걸 막기위해, 부지런히는 못하더라도 꾸준히 포스팅을 할 것이다.</p>
 
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/start-new-blog/">더보기</a>
-    </footer>
+
+		
+		<a href="/blog/start-new-blog/" class="more-link">더보기</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">&nbsp;
+
+
+
+
+
+
+
+
   
 
-</article>
+
+<time datetime="2012-09-24T21:35:00+09:00" pubdate data-updated="true">Sep 24<span>th</span>, 2012</time></div>
+	<div class="tags">&nbsp;
+
+
+	<a class='category' href='/blog/categories/daily/'>daily</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/start-new-blog//blog/index.html#disqus_thread" data-disqus-identifier="http://windtale.net/blog/start-new-blog/">Comments</a></span>
+	
+</div></article>
 
 <nav id="pagenavi">
     
     
 </nav>
+</div>
+	<footer id="footer" class="inner">&copy; 2014
 
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - 진우 -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+    진우
 
 </footer>
-  
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
 
 <script type="text/javascript">
       var disqus_shortname = 'windtale1';
@@ -518,37 +485,24 @@ Sass등은 변수, 함수, 확장/상속 등의 기능을 통해 해결한다. �
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script + '?default_tab=recent';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
 
 
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id; js.async = true;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-38155854-1']);
+		_gaq.push(['_trackPageview']);
 
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
 
 
 

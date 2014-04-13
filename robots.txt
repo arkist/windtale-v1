@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: 
+Disallow:
 
-Sitemap: http://windtale.net/sitemap.xml 
+Sitemap: http://windtale.net/sitemap.xml
