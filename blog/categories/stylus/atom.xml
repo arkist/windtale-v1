@@ -4,7 +4,7 @@
   <title><![CDATA[Category: stylus | WindTale]]></title>
   <link href="http://windtale.net/blog/categories/stylus/atom.xml" rel="self"/>
   <link href="http://windtale.net/"/>
-  <updated>2014-04-14T00:05:37+09:00</updated>
+  <updated>2014-04-14T09:01:55+09:00</updated>
   <id>http://windtale.net/</id>
   <author>
     <name><![CDATA[진우]]></name>
@@ -21,15 +21,16 @@
     <content type="html"><![CDATA[<p>css preprocessor라는 녀석들이 있다.<br/>
 css의 태생적 한계를 극복하기 위해 나온 것으로 대표적으론 <a href="http://sass-lang.com/">Sass</a>, <a href="http://lesscss.org/">less</a>, <a href="http://learnboost.github.io/stylus/">stylus</a>가 있다.</p>
 
-<p>css는 쉽고 간단하지만 갈수록 요구사항은 복잡해지고 있고 유지보수도 힘든 형태가 되어가고 있다.<br/>
-Sass등은 변수, 함수, 확장/상속 등의 기능을 통해 해결한다. 좀 더 잘 알고 싶다면 <a href="http://sass-lang.com/guide">Sass의 guide페이지</a>를 살펴보자. 다른 녀석들도 문법은 다르지만 큰 방향성은 비슷하다.</p>
+<p>css는 쉽고 간단하지만 갈수록 요구사항과 스펙이 복잡해지고 있고 그에따라 유지보수도 힘들어 지고 있다.<br/>
+Sass등은 변수, 함수, 확장/상속 등의 기능을 추가해 이를 돕는다. 좀 더 잘 알고 싶다면 <a href="http://sass-lang.com/guide">Sass의 guide페이지</a>를 살펴보자. 다른 녀석들도 문법은 다르지만 큰 방향성은 비슷하다.</p>
 
 <p>그 중에서도 나는 Sass를 가장 선호하는데, 이번 포스팅에서는 그에 대해 풀어보려 한다.</p>
 
 <!-- more -->
 
 
-<p>다른 두 녀석을 먼저 간단하게 살펴보고 Sass에 대해 이야기 할 것이다.</p>
+<p>다른 두 녀석을 먼저 간단하게 살펴보고 Sass에 대해 이야기 할 것이다.<br/>
+이 포스트는 상호간 문법적 차이나 사용법을 설명하지는 않는다. 그동안의 경험으로 알게된 특성을 간략히 정리해서 공유하는 목적이다.</p>
 
 <h2>less</h2>
 
@@ -146,10 +147,10 @@ Sass등은 변수, 함수, 확장/상속 등의 기능을 통해 해결한다. �
 
 <h2>정리</h2>
 
-<p>결국 나는 Sass를 선택해서 2년이 넘도록 개인프로젝트와 회사 업무 모두에 사용하고 있다.</p>
+<p>나는 Sass를 선택해서 2년이 넘도록 개인프로젝트와 회사 업무 모두에 사용하고 있다.</p>
 
-<p>&lsquo;내가 Sass를 선택한 이유'는 실은 다음과 같이 간단하다.<br/>
-less의 경우 문법과 빈약한 기능이 맘에 안들었고, stylus는 혼자서 빠르게 작업할 때는 잘 사용하지만 협업시에는 문법과 ide 지원때문에 별로 호응을 얻지 못했다. Sass는 ruby 환경셋팅을 처음 할때엔 괴로웠지만, 친숙한 문법과 강력한 기능 그리고 Compass의 지원으로 사용하지 않을 이유가 없었다. 앞으로도 계속 사용하고 주변인에게 꾸준히 전파할 것이다.</p>
+<p>&lsquo;내가 Sass를 선택한 이유'는 결국 다음과 같이 간단하다.<br/>
+<strong>less</strong>의 경우 문법과 빈약한 기능이 맘에 안들었고, <strong>stylus</strong>는 혼자서 빠르게 작업할 때는 잘 사용하지만 협업시에는 문법과 ide 지원때문에 별로 호응을 얻지 못했다. 너무 문법이 관대한 점이 초보자가 사용하기엔 올바른 css 작성습관을 헤칠 수 있다고 판단되어 협업시에도 권장하지 않는다. <strong>Sass</strong>는 ruby 환경셋팅을 처음 할땐 괴로웠지만 친숙한 문법과 강력한 기능, 그리고 Compass의 지원으로 사용하지 않을 이유가 없었다. 앞으로도 계속 사용하고 주변인에게 꾸준히 전파할 것이다.</p>
 
 <p>Libsass와 그의 Node.js 바인딩인 <a href="https://github.com/andrew/node-sass">node-sass</a>가 있기 때문에, 앞으로 Ruby를 사용하지 않는 환경에서는 다음과 같이 구성하려고 한다.</p>
 
