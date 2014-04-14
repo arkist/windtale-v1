@@ -15,12 +15,11 @@
 	<meta name="twitter:image" content="{{ site.url }}/favicon.png">
 	<meta name="twitter:site" content="{% if site.twitter_user %} @{{ site.twitter_user }} {% endif %}">
 	<meta name="twitter:creator" content="{% if site.twitter_user %} @{{ site.twitter_user }} {% endif %}">
-	 +
-	<meta property="og:type" content="blog">
-	<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-	<meta property="og:url" content="{{ site.url }}{{ page.url }}">
-	<meta property="og:image" content="{{ site.url }}/favicon.png">
-	<meta property="og:site_name" content="{{ site.title }}">
+	<meta name="og:type" content="blog">
+	<meta name="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+	<meta name="og:url" content="{{ site.url }}{{ page.url }}">
+	<meta name="og:image" content="{{ site.url }}/favicon.png">
+	<meta name="og:site_name" content="{{ site.title }}">
 
 
 	{% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
