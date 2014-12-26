@@ -39,8 +39,11 @@ article{
 				left: 0;
 			}
 		}
-		p, blockquote, ul, ol, dl, table, iframe, h1, h2, h3, h4, h5, h6, .video-container{
+		iframe, h1, h2, h3, h4, h5, h6{
 			margin-top: 30px;
+		}
+		p, blockquote, ul, ol, dl, table, .video-container {
+			margin-top: 10px;
 		}
 		ul, ol, dl{
 			margin-left: 20px;
