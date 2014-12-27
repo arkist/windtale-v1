@@ -4,11 +4,7 @@
   <title><![CDATA[Category: css | WindTale]]></title>
   <link href="http://windtale.net/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://windtale.net/"/>
-<<<<<<< HEAD
   <updated>2014-12-27T22:07:16+09:00</updated>
-=======
-  <updated>2014-04-14T09:04:23+09:00</updated>
->>>>>>> a2bae631c7f3852a9635b032c82ff689c48fbdfc
   <id>http://windtale.net/</id>
   <author>
     <name><![CDATA[진우]]></name>
@@ -18,7 +14,6 @@
 
   
   <entry>
-<<<<<<< HEAD
     <title type="html"><![CDATA[CSS 이미지 스프라이트 자동화 (with grunt-spritesmith)]]></title>
     <link href="http://windtale.net/blog/css-image-sprite-automation-with-grunt-spritesmith/"/>
     <updated>2014-12-26T19:28:26+09:00</updated>
@@ -173,8 +168,6 @@ Grunt, Sass, grunt-spritesmith의 모든 내용을 알아야 하는건 아니다
   </entry>
   
   <entry>
-=======
->>>>>>> a2bae631c7f3852a9635b032c82ff689c48fbdfc
     <title type="html"><![CDATA[내가 Sass를 선택한 이유]]></title>
     <link href="http://windtale.net/blog/why-i-choose-sass/"/>
     <updated>2014-04-13T19:15:27+09:00</updated>
