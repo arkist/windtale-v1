@@ -4,7 +4,7 @@
   <title><![CDATA[Category: grunt | WindTale]]></title>
   <link href="http://windtale.net/blog/categories/grunt/atom.xml" rel="self"/>
   <link href="http://windtale.net/"/>
-  <updated>2014-12-27T22:19:09+09:00</updated>
+  <updated>2014-12-27T22:26:25+09:00</updated>
   <id>http://windtale.net/</id>
   <author>
     <name><![CDATA[진우]]></name>
@@ -18,7 +18,7 @@
     <link href="http://windtale.net/blog/css-image-sprite-automation-with-grunt-spritesmith/"/>
     <updated>2014-12-27T21:28:26+09:00</updated>
     <id>http://windtale.net/blog/css-image-sprite-automation-with-grunt-spritesmith</id>
-    <content type="html"><![CDATA[<p><del>이번에도 거의 한달만의</del> 결국 연말에야  겨우 완성시키는 포스팅이다.<br/>
+    <content type="html"><![CDATA[<p>결국 연말에야 겨우 완성시키는 포스팅이다.<br/>
 지난 포스트에서 예고했던대로 <a href="https://github.com/Ensighten/grunt-spritesmith">grunt-spritesmith</a>를 통해 이미지 스프라이트를 자동화 하는 방법에 대해 정리해 보았다.</p>
 
 <p>CSS 이미지 스프라이트가 무엇이고 왜 필요한지, 그리고 이를 수동으로 할 때 어떤 문제점이 있는지에 대해 먼저 간단히 설명하고 자동화의 이점과 방법에 대해 설명할 것이다. &lsquo;CSS 이미지 스프라이트 자동화의 필요성과 방법'이 주요 내용이 될 것이며 'CSS 이미지 스프라이트'나 'grunt-spritesmith'에 그 자체에 대해서는 외부링크로 대신할 것이다.</p>
