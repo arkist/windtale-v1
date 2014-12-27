@@ -4,7 +4,7 @@
   <title><![CDATA[Category: sass | WindTale]]></title>
   <link href="http://windtale.net/blog/categories/sass/atom.xml" rel="self"/>
   <link href="http://windtale.net/"/>
-  <updated>2014-12-27T22:26:25+09:00</updated>
+  <updated>2014-12-28T01:02:41+09:00</updated>
   <id>http://windtale.net/</id>
   <author>
     <name><![CDATA[진우]]></name>
@@ -136,7 +136,7 @@ css로 스프라이트에 대한 정보를 기술할때 크기에 대한 정보�
 <p>간략히 소개하자면, 특정 폴더에 이미지들을 넣어두고 grunt task를 실행하면 설정에 맞추어서 스프라이트 이미지와 css 코드를 생성해주는 녀석이다. 자세한 사용법은 <a href="https://github.com/Ensighten/grunt-spritesmith#getting-started">grunt-spritesmith의 깃헙 페이지</a>를 참고해보자. 매우 친절하게 설명이 되어있다. 전에는 스프라이트 이미지를 생성해주기 위해 별도의 엔진을 설치해줬어야 했는데, 지금 살펴보니 3.0.0버전부터는 node로 작동하는 <code>pixelsmith</code>를 기본엔진으로 적용한 모양이다. (포스트를 완성해가는 현재 시점에서, 최신버전은 3.5.0이다)</p>
 
 <p>그냥 소개만 하고 끝내면 당황할 것 같아서 예제를 만들어 보았다.<br/>
-<strong><a href="https://github.com/Ensighten/grunt-spritesmith">grunt-sass-spritesmith example</a></strong>을 체크아웃 받아서 소스를 살펴보자.</p>
+<strong><a href="https://github.com/arkist/grunt-sass-spritesmith-example">grunt-sass-spritesmith example</a></strong>을 체크아웃 받아서 소스를 살펴보자.</p>
 
 <p>예제가 포함하고 있는 내용은 다음과 같다</p>
 
