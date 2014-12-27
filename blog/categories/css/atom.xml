@@ -4,7 +4,7 @@
   <title><![CDATA[Category: css | WindTale]]></title>
   <link href="http://windtale.net/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://windtale.net/"/>
-  <updated>2014-12-27T22:07:16+09:00</updated>
+  <updated>2014-12-27T22:19:09+09:00</updated>
   <id>http://windtale.net/</id>
   <author>
     <name><![CDATA[진우]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[CSS 이미지 스프라이트 자동화 (with grunt-spritesmith)]]></title>
     <link href="http://windtale.net/blog/css-image-sprite-automation-with-grunt-spritesmith/"/>
-    <updated>2014-12-26T19:28:26+09:00</updated>
+    <updated>2014-12-27T21:28:26+09:00</updated>
     <id>http://windtale.net/blog/css-image-sprite-automation-with-grunt-spritesmith</id>
     <content type="html"><![CDATA[<p><del>이번에도 거의 한달만의</del> 결국 연말에야  겨우 완성시키는 포스팅이다.<br/>
 지난 포스트에서 예고했던대로 <a href="https://github.com/Ensighten/grunt-spritesmith">grunt-spritesmith</a>를 통해 이미지 스프라이트를 자동화 하는 방법에 대해 정리해 보았다.</p>
