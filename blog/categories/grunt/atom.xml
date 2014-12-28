@@ -4,7 +4,7 @@
   <title><![CDATA[Category: grunt | WindTale]]></title>
   <link href="http://windtale.net/blog/categories/grunt/atom.xml" rel="self"/>
   <link href="http://windtale.net/"/>
-  <updated>2014-12-28T01:02:41+09:00</updated>
+  <updated>2014-12-28T10:39:21+09:00</updated>
   <id>http://windtale.net/</id>
   <author>
     <name><![CDATA[진우]]></name>
@@ -155,8 +155,7 @@ css로 스프라이트에 대한 정보를 기술할때 크기에 대한 정보�
 
 <p>글의 시작에서도 밝혔지만 본 포스트에선 CSS 이미지 스프라이트기법, Sass, Grunt에 대한 기본적인 내용을 알고 있다는 가정하에 &lsquo;CSS 이미지 스프라이트 자동화의 필요성과 방법'를 위주로 다루었기 때문에 그 대상이 굉장히 한정적일 것이라는 생각이 든다.</p>
 
-<p>하지만 Sass, Grunt에 대해 모르는 사람이라도 CSS 이미지 스프라이팅에 고통을 겪어본 사람들이라면 본 글에 공감을 할 수 있을 것이다.<br/>
-내 경우엔 이미지 리소스 재단과 수동 스프라이트 작업에 지쳐서 업계를 떠나려고 했었다. 다행히 소개한대로 지금은 살아남을 방법이 생겼다. 뭐 최근엔 이미지를 다루는 일 자체가 많이 줄었긴 했지만 규모가 있는 한국웹서비스를 유지보수 하려면 역시 스프라이트를 자동화한다는건 의미가 있을 것이다.<br/>
+<p>하지만 Sass, Grunt에 대해 모르는 사람이라도 CSS 이미지 스프라이팅에 고통을 겪어본 사람들이라면 본 글에 공감을 할 수 있을 것이다. 뭐 요샌 레이아웃을 꾸미는데 이미지를 쓰는일 자체가 많이 줄긴 했지만 규모가 있는 한국웹서비스를 유지보수 하려면 여전히 스프라이트를 자동화한다는건 의미가 있을 것이다.<br/>
 Grunt, Sass, grunt-spritesmith의 모든 내용을 알아야 하는건 아니다. 겁먹지말고 예제를 차근히 살펴보자.</p>
 
 <p>마지막으로 만약 당신이 프론트엔드 개발자이고 다양한 반복작업과 css/js의 한계에 지쳤다면 Sass와 Grunt(or <a href="http://gulpjs.com/">Gulp</a>)를 얼른 익혀보길 권하며 글을 마무리한다.</p>
