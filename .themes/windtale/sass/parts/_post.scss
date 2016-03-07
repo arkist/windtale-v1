@@ -23,7 +23,7 @@
 		 }
 		.tags {
 		}
-		.date, .tags, .comments{
+		div.date, .tags, .comments{
 			margin-right: 20px;
 			padding-left: 15px;
 			position: relative;
@@ -35,7 +35,7 @@
 				left: 0;
 			}
 		}
-		.date:before{content: "\f073";}
+		div.date:before{content: "\f073";}
 		.tags:before{content: "\f02c";}
 		.comments:before{content: "\f075";}
 		:first-child {
