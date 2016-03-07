@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: tool | WindTale]]></title>
+  <link href="http://windtale.net/blog/categories/tool/atom.xml" rel="self"/>
+  <link href="http://windtale.net/"/>
+  <updated>2014-12-28T10:39:21+09:00</updated>
+  <id>http://windtale.net/</id>
+  <author>
+    <name><![CDATA[진우]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Sublime Text 유용한 기능과 단축키]]></title>
+    <link href="http://windtale.net/blog/sublime-text-tip/"/>
+    <updated>2012-09-24T21:57:00+09:00</updated>
+    <id>http://windtale.net/blog/sublime-text-tip</id>
+    <content type="html"><![CDATA[<h2>소개</h2>
+
+<p><a href="http://sublimetext.com">Sublime Text</a>를 쓰는 사람이 많이 늘었다. 맥/윈도우/리눅스를 지원하는 강력한 에디터이다. 심플함과 막강한 기능이 매력이다.</p>
+
+<p>무료로 사용할 수도 있지만, (하루에 한번꼴로 구매권유 팝업이 뜨긴 한다) $59를 지불하고 정품유저로 등록하면 모든 운영체제에서 사용할 수 있는 라이센스이고, 너무도 잘 만들어진 녀석이라 나도 하나 구입해서 사용중이다.</p>
+
+<p>공식 홈페이지나 문서에도 사용법이 나와 있긴 하지만,,
+지금 블로그에서 사용하고 있는 마크다운 방식을 손에 익히기도 할겸, 그리고 주변에서 간단하게 사용법과 팁을 소개해 줬으면 좋겠다는 요구가 좀 있어서 가볍게 정리해 보기로 했다.</p>
+
+<!--more-->
+
+
+<h2>자주 쓰게되는 단축키</h2>
+
+<ul>
+<li><p><strong>행 들여쓰기 · 내어쓰기</strong>
+win: <code>ctrl+[ · ctrl+]</code>, mac: <code>cmd+[ · cmd+]</code>
+기본적으로 탭키를 사용할 수도 있지만, 한참 코드를 작성하다가 행단위 들여쓰기를 제어하려면 이 방식이 편하기도.</p></li>
+<li><p><strong>행 상하 이동</strong>
+win: <code>ctrl+shift+↕</code>, mac: <code>cmd+ctrl+↕</code></p></li>
+<li><p><strong>코드블럭 접기 · 펴기</strong>
+win: <code>ctrl+shift+[ · ctrl+shift+]</code>, mac: <code>cmd+opt+[ · opt+shift+]</code></p></li>
+<li><p><strong>찾아바꾸기</strong>
+win: <code>ctrl+h</code>, mac: <code>cmd+opt+f</code></p></li>
+<li><p><strong>여러파일에서 찾기</strong>
+win: <code>ctrl+shift+f</code>, mac: <code>cmd+shift+f</code></p></li>
+<li><p><strong>GoTo Anything</strong>
+win: <code>ctrl+p</code>, mac: <code>cmd+p</code>
+GoTo Anything을 호출한다. 해당기능은 아래서 살펴볼 것이다.</p></li>
+<li><p><strong>Command Palette</strong>
+win: <code>ctrl+shift+p</code>, mac: <code>cmd+shift+p</code>
+Command Palette를 호출한다. 해당기능은 아래서 살펴볼 것이다.</p></li>
+</ul>
+
+
+<h2>유용한 기능</h2>
+
+<h3>프로젝트단위 관리</h3>
+
+<p>단일파일만 작업할 것이 아니라면 일단 프로젝트부터 생성하고 보자. 아래 살펴볼 <strong>GoTo Anything</strong>이나 검색등을 잘 활용하려면 프로젝트 단위로 관리를 하는 것이 좋다.
+상단 메뉴의 <strong>Project &ndash; Add Folder to~</strong> 메뉴로 작업공간을 프로젝트에 추가하자.</p>
+
+<h3>GoTo Anything</h3>
+
+<p><img src="http://windtale.net/images/posts/20120924/1.png" alt="GoTo Anything. 파일명에 'in'이라는 단어가 들어가는 파일을 찾고 있다"></p>
+
+<p>이름 그대로 어디로든 이동이 가능하다. 단축키를 외워두면 좋다. (위에 소개했다)<br/>
+실행하면 프로젝트 내의 모든 파일의 목록이 노출된다. 타이핑을 통해 목록에서 필터링을 통해 접근할 수 있다.<br/>
+예를 들면 <em>view/headContainer.html.erb</em>라는 파일에 접근하려는 경우 <code>view hc erb</code>라는 식으로 축약해 입력해도 목록에는 원하는 파일이 노출될 것이다.</p>
+
+<p>단순한 파일간 이동 뿐만이 아니라 파일내의 특정부분으로 이동도 가능하다 <code>:line 라인넘버</code>를 입력해서 파일의 특정라인으로의 접근이 가능하며, <code>@symbol 심볼명</code>을 통해 함수등 특정 심볼 정의로 이동하거나 <code>#word 단어</code>를 통한 특정단어위치로의 이동도 가능하다.</p>
+
+<p>심지어 파일이름과 특정부분을 조합한 이동도 가능하다.
+html을 수정하다가 <em>sass/common.scss</em>의 <em>#container 스타일 정의부분을 수정</em>할 일이 생겼다. 이 경우 Goto Anything에서 <code>sass comm #cont</code>만 입력하면 간단히 원하는 위치로 이동할 수 있을 것이다.
+멋지지 않은가? ;)</p>
+
+<h3>Command Palette</h3>
+
+<p><img src="http://windtale.net/images/posts/20120924/2.png" alt="Command Palette. 'install Package' 명령을 실행하기위해 간단히 'inst pa'라고 입력했다"></p>
+
+<p>커맨드 팔렛트는 마우스 대신 키보드로 명령을 입력해서 실행할 수 있는 강력한 도구다. 이것도 단축키를 외워두면 인생이 편해진다. (위에 소개했다)<br/>
+사용가능한 모든 메뉴가 노출되므로 하나하나 살펴보는 것도 좋고, <strong>GoTo Anything</strong>처럼 몇번의 타이핑으로 원하는 명령을 빠르게 찾을 수도 있다.<br/>
+예를 들면 아래서 살펴볼 <strong>Package Control</strong>의 경우, 단지 <code>paccon</code>이라고 입력하는 것으로 충분하다. <code>pcon</code>도 괜찮고 <code>pack</code>도 좋다.</p>
+
+<h3>Package Control</h3>
+
+<p><img src="http://windtale.net/images/posts/20120924/3.png" alt="Package Control의 Install Package 메뉴에서 패키지 목록을 둘러보고 있다. 패키지명과 간단한 설명이 노출된다"></p>
+
+<p>일단 서브라임 텍스트를 설치했으면 먼저 실행해야 하는 작업이 이 패키지 매니저란 녀석을 설치하는 것이다.<br/>
+서브라임에서는 &lsquo;패키지'라는 것이 '플러그인'의 개념이다. 패키지 매니저는 이름 그대로 서브라임이 지원하는 패키지를 관리할 수 있는 녀석이다.
+복잡한 인터페이스 없이 간단한 커맨드라인명령으로 관리가 가능하다.<br/>
+설치를 위해서는 먼저 콘솔창을 호출한다.</p>
+
+<p><strong>단축키</strong> <code>ctrl+`</code></p>
+
+<p>하단에 콘솔창이 열릴 것이다.
+아래의 내용을 복사해 콘솔창에 붙여넣고 실행(엔터)한다.</p>
+
+<blockquote><p>import urllib2,os; pf=&lsquo;Package Control.sublime-package&rsquo;; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),&lsquo;wb&rsquo;).write(urllib2.urlopen(&lsquo;<a href="http://sublime.wbond.net/">http://sublime.wbond.net/</a>&rsquo;+pf.replace(&lsquo; &rsquo;,&lsquo;%20&rsquo;)).read()); print &lsquo;Please restart Sublime Text to finish installation&rsquo;</p></blockquote>
+
+<p>콘솔에 <em>Please restart Sublime Text to finish installation</em>라는 메시지가 출력되는 것을 확인하고 프로그램을 재시작한다.</p>
+
+<p>만약 위의 명령으로 작동하지 않는다면 <a href="http://wbond.net/sublime_packages/package_control/installation">installation &ndash; Sublime Package Control</a>을 참고해서 다시한번  설치를 시도해보자.</p>
+
+<blockquote><p><strong>[2013-07-11]</strong> 현재 베타릴리즈 된 SublimeText3의 경우 위의 방식이 아닌 git을 통한 방법으로 설치를 해야한다. <a href="http://wbond.net/sublime_packages/package_control/installation#ST3">공식사이트의 설명</a>을 참고하자.</p></blockquote>
+
+<p>설치를 마쳤으면 이제 커맨드 팔레트를 열어 Package Control로 다룰 수 있는 명령들을 알아보자.<br/>
+많이 사용하는 명령은 다음과 같다.</p>
+
+<ul>
+<li><strong>Install Package</strong>: 패키지를 설치한다.</li>
+<li><strong>List Package</strong>: 설치된 패키지 목록을 확인한다.</li>
+<li><strong>Remove Package</strong>: 설치된 패키지를 삭제한다.</li>
+<li><strong>Update Package</strong>: 설치된 패키지에 업데이트사항이 있는지 확인하고, 업데이트 내역이 있을 경우 업데이트한다.</li>
+</ul>
+
+
+<p>더 자세한 내용은 <a href="http://wbond.net/sublime_packages/package_control">Sublime Package Control</a>에서 살펴볼 수 있다.</p>
+
+<h3>유용한 패키지 목록</h3>
+
+<blockquote><p><strong>[2013-07-11]</strong> SublimeText3의 경우 파이썬버전이 2.6 &ndash;> 3.3으로 변경되면서 호환되지 않는 패키지들이 있다. 호환성에 대해서는 <a href="https://github.com/wbond/sublime_package_control/wiki/Sublime-Text-3-Compatible-Packages">Sublime Package Control Wiki의 ST3 호환성리스트</a>를 참고하도록 하자.</p></blockquote>
+
+<p>내가 쓰고 있는 패키지는 다음과 같다. 코딩을 즐겁게 해준다 ;)</p>
+
+<ul>
+<li><p><strong><a href="https://github.com/facelessuser/BracketHighlighter">BracketHighlighter</a></strong><br/>
+블럭영역의 시작과 끝을 눈에 좀 더 잘 띄게(?) 해준다. 기본은 옅은 밑줄만 쳐져 있어 분간이 어려웠다.</p></li>
+<li><p><strong><a href="https://github.com/buymeasoda/soda-theme/">Theme &ndash; Soda</a></strong><br/>
+조금은 뚱뚱한 느낌이 드는 기본 테마를 변경해준다. Theme는 에디터 내부 문법강조 컬러를 변경해주는 Color Scheme과는 다른 개념으로, 프로그램 전체의 룩앤필을 칭한다.</p></li>
+<li><p><strong><a href="https://github.com/talltroym/sublime-theme-railscasts">RailsCasts Theme</a></strong><br/>
+위의 Theme와는 다르게 이건 Color Scheme을 변경해준다. RailsCast 스타일이다. 현재까지 써본것중엔 기본으로 포함된 Twilight과 함께 제일 편안한 색상이다.</p></li>
+<li><p><strong><a href="http://wbond.net/sublime_packages/package_control">Package Control</a></strong><br/>
+위에서 살펴보았다. 다양한 패키지를 커맨드 팔렛트에서 관리할 수 있도록 해준다.</p></li>
+<li><p><strong><a href="https://github.com/noklesta/SublimeQuickFileCreator">Quick File Creator</a></strong><br/>
+커맨드 팔렛트에서 파일, 폴더 등을 생성할 수 있다. 마우스 안녕~</p></li>
+<li><p><strong><a href="https://github.com/skuroda/Sublime-AdvancedNewFile">AdvancedNewFile</a></strong><br/>
+<strong>[2013.07.11]</strong> ST3 호환성문제로 위의 Quick File Creator를 대체할 녀석을 찾던 중 발견. 이쪽이 더 직관적이고 사용이 편하다.
+커맨드 한번으로 파일생성 가능. <code>hello/im/arkist/msg.markdown</code>식으로 입력하면 폴더들과 파일이 한번에 생성된다. 편하다!</p></li>
+<li><p><strong><a href="//emmet.io">Emmet</a> (ZenCoding)</strong><br/>
+<a href="http://coding.smashingmagazine.com/2009/11/21/zen-coding-a-new-way-to-write-html-code/">젠코딩</a>을 가능하게 해준다. html 코딩할 때 이거 없으면 피곤하다.<br/>
+<strong>[2012.01.26]</strong> ZenCoding이 Emmet으로 진화했다. <a href="http://docs.emmet.io/css-abbreviations/fuzzy-search/">Fuzzy Search</a> 기능 최고!</p></li>
+<li><p><strong><a href="https://github.com/kuroir/SCSS.tmbundle">SCSS</a></strong><br/>
+<a href="http://sass-lang.com/">SCSS</a>를 위한 문법강조를 지원한다.</p></li>
+<li><p><strong><a href="https://github.com/buymeasoda/soda-theme/">ERB Insert and Toggle Commands</a></strong><br/>
+ERB 블럭 입력을 도와준다.</p></li>
+<li><p><strong><a href="https://github.com/Kronuz/SublimeCodeIntel">SublimeCodeIntel</a></strong><br/>
+코드인텔리전스 기능이다. 지원언어는 다음과 같다.</p>
+
+<blockquote><p>PHP, Python, RHTML, JavaScript, Smarty, Mason, Node.js, XBL, Tcl, HTML, HTML5, TemplateToolkit, XUL, Django, Perl, Ruby, Python3</p></blockquote></li>
+<li><p><strong><a href="http://wbond.net/sublime_packages/sftp">SFTP</a></strong><br/>
+FTP, FTPS, SFTP 지원을 위한 녀석.<br/>
+_유료. 이것도 라이센스키를 입력하지 않으면 구매권유 팝업이 뜬다.</p></li>
+<li><p><strong><a href="https://github.com/joelpt/sublimetext-automatic-backups">Automatic Backups</a></strong><br/>
+파일을 저장할때마다 백업본을 생성해준다.<br/>
+<strong>[2013.07.11]</strong> ST3 호환성을 위해 <a href="https://github.com/akalongman/sublimetext-autobackups">AutoBackups</a>로 대체.</p></li>
+</ul>
+
+
+<hr />
+
+<p>짦은 글이었는데 글 쓰는 시간이 제법 오래 걸렸다; 그동안 글정리를 너무 소홀히 한듯..<br/>
+새로운 내용이 생길때마다 이 포스트는 지속적으로 업데이트 할 것이다.</p>
+]]></content>
+  </entry>
+  
+</feed>
