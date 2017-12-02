@@ -41,13 +41,10 @@
 <lastmod>2012-09-24T21:35:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://windtale.net/blog/</loc>
-</url>
-<url>
-<loc>http://windtale.net/</loc>
-</url>
-<url>
 <loc>http://windtale.net/blog/archives/</loc>
+</url>
+<url>
+<loc>http://windtale.net/blog/</loc>
 </url>
 <url>
 <loc>http://windtale.net/about/</loc>
@@ -93,5 +90,9 @@
 </url>
 <url>
 <loc>http://windtale.net/blog/categories/grunt/</loc>
+</url>
+<url>
+<loc>http://windtale.net/index.html</loc>
+<lastmod>2017-12-03T01:20:03+09:00</lastmod>
 </url>
 </urlset>
